@@ -20,11 +20,13 @@ import torch.optim
 import torch.utils.data
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
+import datetime
 
 import clustering
 import models
 from util import AverageMeter, Logger, UnifLabelSampler
 
+####### AT: the definition of the arguments to launch the program in the debugger are to be found in the launch.json and settings.json scripts 
 
 parser = argparse.ArgumentParser(description='PyTorch Implementation of DeepCluster')
 
@@ -146,7 +148,8 @@ def main():
         model.classifier = nn.Sequential(*list(model.classifier.children())[:-1])
 
         # get the features for the whole dataset
-        features = compute_features(dataloader, model, len(dataset))
+        features = compute_features(dataloader, model, 1024) # RC 2019-07-22 Just a few images for testing
+#        features = compute_features(dataloader, model, len(dataset))
 
         # cluster the features
         clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
@@ -262,7 +265,7 @@ def train(loader, model, crit, opt, epoch):
         loss = crit(output, target_var)
 
         # record loss
-        losses.update(loss.data[0], input_tensor.size(0))
+        losses.update(loss.data, input_tensor.size(0)) # RC 2019-07-22 Adjusted loss.data -> loss.data[0] for pytorch version change https://github.com/NVIDIA/flownet2-pytorch/issues/113
 
         # compute gradient and do SGD step
         opt.zero_grad()
@@ -293,6 +296,10 @@ def compute_features(dataloader, model, N):
     model.eval()
     # discard the label information in the dataloader
     for i, (input_tensor, _) in enumerate(dataloader):
+        if (i * args.batch)==N:
+            print('Skipping out for testing')
+            break
+
         with torch.no_grad():   #RC
             input_var = torch.autograd.Variable(input_tensor.cuda())
             aux = model(input_var).data.cpu().numpy()
@@ -314,8 +321,13 @@ def compute_features(dataloader, model, N):
             print('{0} / {1}\t'
                   'Time: {batch_time.val:.3f} ({batch_time.avg:.3f})'
                   .format(i, len(dataloader), batch_time=batch_time))
+
     return features
 
 
 if __name__ == '__main__':
+    start = datetime.datetime.now()
     main()
+    end = datetime.datetime.now()
+    print(start)
+    print(end)

@@ -6,14 +6,14 @@
 #
 #!/bin/bash
 
-DIR="/imaging/opendata/imagenet/ILSVRC/Data/CLS-LOC/train"
+DIR="/home/CUSACKLAB/annatruzzi/imagenet_sample" #ing/opendata/imagenet/ILSVRC/Data/CLS-LOC/train"
 ARCH="alexnet"
 LR=0.05
 WD=-5
 #K=10000
 K=10
-WORKERS=12
-EXP="/imaging/DeepCluster"
+WORKERS=4
+EXP="/home/CUSACKLAB/annatruzzi/DeepCluster_output"
 PYTHON="/home/CUSACKLAB/annatruzzi/anaconda3/envs/pytorch_p27/bin/python"
 
 mkdir -p ${EXP}
