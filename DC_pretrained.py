@@ -79,16 +79,18 @@ def _store_feats(layer, inp, output):
     _model_feats.append(np.reshape(output, (len(output), -1)).numpy())
 
 
+def save_tensor(self, input, output):
+        layer_list.append(input)
+
 def compute_features(dataloader, model, N):
     if args.verbose:
         print('Compute features')
     batch_time = AverageMeter()
     end = time.time()
     model.eval()
-    # discard the label information in the dataloader
     act = {}
     for i, input_tensor in enumerate(dataloader):
-        input_var, label = torch.autograd.Variable(input_tensor),torch.autograd.Variable(label)
+        input_var, label = torch.autograd.Variable(input_tensor[0].cuda()),input_tensor[2]
         aux = model(input_var).data.cpu().numpy()
 
         if i == 0:
@@ -112,7 +114,7 @@ def compute_features(dataloader, model, N):
         layer_act = {}
         for i,layer in enumerate(model.features):
             layer_act[i] = layer.register_forward_hook(_store_feats)
-        act[label] = layer_act
+        act[label[0]] = layer_act
     return act
 
 
@@ -124,10 +126,10 @@ def get_activations(offset):
             transforms.CenterCrop(224),
             transforms.ToTensor(),
             normalize]
-        dataset = datasets.ImageFolder(offset, transform=transforms.Compose(tra))
-#        dataset = ImageFolderWithPaths(offset, transform=transforms.Compose(tra))
+#        dataset = datasets.ImageFolder(offset, transform=transforms.Compose(tra))
+        dataset = ImageFolderWithPaths(offset, transform=transforms.Compose(tra))
         dataloader = torch.utils.data.DataLoader(dataset,
-                                                batch_size=118,
+                                                batch_size=1,
                                                 num_workers=args.workers,
                                                 pin_memory=True)
         features = compute_features(dataloader, model, len(dataset))
