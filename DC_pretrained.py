@@ -56,6 +56,21 @@ parser.add_argument('--seed', type=int, default=31, help='random seed (default: 
 parser.add_argument('--exp', type=str, default='', help='path to exp folder')
 parser.add_argument('--verbose', action='store_true', help='chatty')
 
+class ImageFolderWithPaths(datasets.ImageFolder):
+    """Custom dataset that includes image file paths. Extends
+    torchvision.datasets.ImageFolder
+    """
+
+    # override the __getitem__ method. this is the method that dataloader calls
+    def __getitem__(self, index):
+        # this is what ImageFolder normally returns 
+        original_tuple = super(ImageFolderWithPaths, self).__getitem__(index)
+        # the image file path
+        path = self.imgs[index][0]
+        # make a new tuple that includes original and the path
+        tuple_with_path = (original_tuple + (path,))
+        return tuple_with_path
+
 
 def _store_feats(layer, inp, output):
     """An ugly but effective way of accessing intermediate model features
@@ -71,8 +86,9 @@ def compute_features(dataloader, model, N):
     end = time.time()
     model.eval()
     # discard the label information in the dataloader
-    for i, (input_tensor, _) in enumerate(dataloader):
-        input_var = torch.autograd.Variable(input_tensor.cuda())
+    act = {}
+    for i, input_tensor in enumerate(dataloader):
+        input_var, label = torch.autograd.Variable(input_tensor),torch.autograd.Variable(label)
         aux = model(input_var).data.cpu().numpy()
 
         if i == 0:
@@ -93,7 +109,11 @@ def compute_features(dataloader, model, N):
             print('{0} / {1}\t'
                   'Time: {batch_time.val:.3f} ({batch_time.avg:.3f})'
                   .format(i, len(dataloader), batch_time=batch_time))
-    return features
+        layer_act = {}
+        for i,layer in enumerate(model.features):
+            layer_act[i] = layer.register_forward_hook(_store_feats)
+        act[label] = layer_act
+    return act
 
 
 def get_activations(offset):
@@ -105,27 +125,23 @@ def get_activations(offset):
             transforms.ToTensor(),
             normalize]
         dataset = datasets.ImageFolder(offset, transform=transforms.Compose(tra))
+#        dataset = ImageFolderWithPaths(offset, transform=transforms.Compose(tra))
         dataloader = torch.utils.data.DataLoader(dataset,
-                                                batch_size=1,
+                                                batch_size=118,
                                                 num_workers=args.workers,
                                                 pin_memory=True)
-        
         features = compute_features(dataloader, model, len(dataset))
-        layer_act = {}
-        for i,layer in enumerate(model.features):
-
+       
         #######  EMBED THIS CODE INTO THE PRETRAINED MODEL (code from eval_linear.py, line 196)
-        for m in model.features.modules():
-            if not isinstance(m, nn.Sequential):
-                x = m(x)
-            if isinstance(m, nn.ReLU):
-                if count == conv:
-                    return x
-            count = count + 1
+        #for m in model.features.modules():
+        #    if not isinstance(m, nn.Sequential):
+        #        x = m(x)
+        #    if isinstance(m, nn.ReLU):
+        #        if count == conv:
+        #            return x
+        #    count = count + 1
 
-            layer_act[i] = layer.register_forward_hook(_store_feats)
-        
-        return layer_act
+        return features
 
 
 if __name__ == '__main__':
@@ -142,17 +158,14 @@ if __name__ == '__main__':
     model.load_state_dict(checkpoint_new)
     model.cuda()
     #layers = ['ConvNdBackward1','ConvNdBackward2','ConvNdBackward3','ConvNdBackward4','ConvNdBackward5','ConvNdBackward9','ConvNdBackward13','ConvNdBackward16','ConvNdBackward19']
-    offsets = [x[0] for x in os.walk('/home/CUSACKLAB/annatruzzi/cichy2016/stimuli')]
-    act = {}
-    for offset in offsets:
-        act[offset] = get_activations(offset)
-    
+    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/stimuli/'  
+    act = get_activations(image_pth)
+
     with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle', 'wb') as handle:
         pickle.dump(act, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 
 
-
-
-
+for i, input_tensor in enumerate(dataloader):
+    print input_tensor
