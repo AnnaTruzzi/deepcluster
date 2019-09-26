@@ -56,6 +56,7 @@ parser.add_argument('--seed', type=int, default=31, help='random seed (default: 
 parser.add_argument('--exp', type=str, default='', help='path to exp folder')
 parser.add_argument('--verbose', action='store_true', help='chatty')
 
+
 class ImageFolderWithPaths(datasets.ImageFolder):
     """Custom dataset that includes image file paths. Extends
     torchvision.datasets.ImageFolder
@@ -72,15 +73,6 @@ class ImageFolderWithPaths(datasets.ImageFolder):
         return tuple_with_path
 
 
-def _store_feats(layer, inp, output):
-    """An ugly but effective way of accessing intermediate model features
-    """
-    _model_feats = []
-    _model_feats.append(np.reshape(output, (len(output), -1)).numpy())
-
-
-def save_tensor(self, input, output):
-        layer_list.append(input)
 
 def compute_features(dataloader, model, N):
     if args.verbose:
@@ -89,61 +81,42 @@ def compute_features(dataloader, model, N):
     end = time.time()
     model.eval()
     act = {}
+
+    def _store_feats(layer, inp, output):
+        """An ugly but effective way of accessing intermediate model features
+        """
+        _model_feats.append(output.cpu().numpy())
+
+    for m in model.features.modules():
+        if isinstance(m, nn.ReLU):
+            m.register_forward_hook(_store_feats)
+
     for i, input_tensor in enumerate(dataloader):
-        input_var, label = torch.autograd.Variable(input_tensor[0].cuda()),input_tensor[2]
-        aux = model(input_var).data.cpu().numpy()
+        with torch.no_grad():
+            input_var, label = input_tensor[0].cuda(),input_tensor[2]
+            _model_feats = []
+            aux = model(input_var).data.cpu().numpy()
+            act[label[0]] = _model_feats
 
-        if i == 0:
-            features = np.zeros((N, aux.shape[1]), dtype='float32')
-
-        aux = aux.astype('float32')
-        if i < len(dataloader) - 1:
-            features[i * args.batch: (i + 1) * args.batch] = aux
-        else:
-            # special treatment for final batch
-            features[i * args.batch:] = aux
-
-        # measure elapsed time
-        batch_time.update(time.time() - end)
-        end = time.time()
-
-        if args.verbose and (i % 200) == 0:
-            print('{0} / {1}\t'
-                  'Time: {batch_time.val:.3f} ({batch_time.avg:.3f})'
-                  .format(i, len(dataloader), batch_time=batch_time))
-        layer_act = {}
-        for i,layer in enumerate(model.features):
-            layer_act[i] = layer.register_forward_hook(_store_feats)
-        act[label[0]] = layer_act
     return act
 
 
-def get_activations(offset):
-    with torch.no_grad():
-        normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                        std=[0.229, 0.224, 0.225])
-        tra = [transforms.Resize(256),
-            transforms.CenterCrop(224),
-            transforms.ToTensor(),
-            normalize]
-#        dataset = datasets.ImageFolder(offset, transform=transforms.Compose(tra))
-        dataset = ImageFolderWithPaths(offset, transform=transforms.Compose(tra))
-        dataloader = torch.utils.data.DataLoader(dataset,
-                                                batch_size=1,
-                                                num_workers=args.workers,
-                                                pin_memory=True)
-        features = compute_features(dataloader, model, len(dataset))
-       
-        #######  EMBED THIS CODE INTO THE PRETRAINED MODEL (code from eval_linear.py, line 196)
-        #for m in model.features.modules():
-        #    if not isinstance(m, nn.Sequential):
-        #        x = m(x)
-        #    if isinstance(m, nn.ReLU):
-        #        if count == conv:
-        #            return x
-        #    count = count + 1
 
-        return features
+def get_activations(offset):
+    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                    std=[0.229, 0.224, 0.225])
+    tra = [transforms.Resize(256),
+        transforms.CenterCrop(224),
+        transforms.ToTensor(),
+        normalize]
+#        dataset = datasets.ImageFolder(offset, transform=transforms.Compose(tra))
+    dataset = ImageFolderWithPaths(offset, transform=transforms.Compose(tra))
+    dataloader = torch.utils.data.DataLoader(dataset,
+                                            batch_size=1,
+                                            num_workers=args.workers,
+                                            pin_memory=True)
+    features = compute_features(dataloader, model, len(dataset))
+    return features
 
 
 if __name__ == '__main__':
@@ -159,15 +132,9 @@ if __name__ == '__main__':
     model = models.alexnet(sobel=True, bn=True, out=10000) 
     model.load_state_dict(checkpoint_new)
     model.cuda()
-    #layers = ['ConvNdBackward1','ConvNdBackward2','ConvNdBackward3','ConvNdBackward4','ConvNdBackward5','ConvNdBackward9','ConvNdBackward13','ConvNdBackward16','ConvNdBackward19']
-    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/stimuli/'  
+    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/stimuli/' 
     act = get_activations(image_pth)
 
     with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle', 'wb') as handle:
         pickle.dump(act, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-
-
-
-for i, input_tensor in enumerate(dataloader):
-    print input_tensor
