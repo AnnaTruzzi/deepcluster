@@ -1,5 +1,6 @@
 import argparse
 import os
+import scipy.io
 import pickle
 import time
 from collections import OrderedDict
@@ -114,7 +115,8 @@ def get_activations(offset):
     dataloader = torch.utils.data.DataLoader(dataset,
                                             batch_size=1,
                                             num_workers=args.workers,
-                                            pin_memory=True)
+                                            pin_memory=True,
+                                            shuffle = False)
     features = compute_features(dataloader, model, len(dataset))
     return features
 
@@ -132,9 +134,9 @@ if __name__ == '__main__':
     model = models.alexnet(sobel=True, bn=True, out=10000) 
     model.load_state_dict(checkpoint_new)
     model.cuda()
-    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/stimuli/' 
+    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/stimuli/cichy' 
     act = get_activations(image_pth)
 
     with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle', 'wb') as handle:
-        pickle.dump(act, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        pickle.dump(act, handle)
 
