@@ -81,8 +81,33 @@ def numeric_order(keys,names_dict):
     return orderedNames
 
 
-def main():
-    ## define images names
+def sq(x):
+    return squareform(x, force='tovector', checks=False)
+
+
+#defines the spearman correlation
+def spearman(model_rdm, rdms):
+    model_rdm_sq = sq(model_rdm)
+    return [stats.spearmanr(sq(rdm), model_rdm_sq)[0] for rdm in rdms]
+
+
+#computes spearman correlation (R) and R^2, and ttest for p-value.
+def fmri_rdm(model_rdm, fmri_rdms):
+    corr = spearman(model_rdm, fmri_rdms)
+    corr_squared = np.square(corr)
+    return np.mean(corr_squared), stats.ttest_1samp(corr_squared, 0)[1]
+
+
+def evaluate(submission, targets, target_names=['EVC_RDMs', 'IT_RDMs']):
+    out = {name: fmri_rdm(submission[name], targets[name]) for name in target_names}
+    out['score'] = np.mean([x[0] for x in out.values()])
+    return out
+
+
+
+
+def evaluate_dc_fmri():
+    ## define images names and synsets
     img_names = {'001':'orange','002':'bench','003':'remote','004':'car','005':'stove','006':'man','007':'table','008':'apple','009':'chart','010':'dog','011':'fox','012':'bus','013':'train','014':'ipod',
                     '015':'pizza','016':'bird','017':'horse','018':'laptop','019':'bear','020':'basketball','021':'piano','022':'guitar','023':'baseball','024':'seal','025':'chair','026':'orangutan','027':'bowl',
                     '028':'tiger','029':'moped','030':'tie','031':'printer','032':'lion','033':'neil','034':'drum','035':'bow','036':'fig','037':'butterfly','038':'lamp','039':'banana','040':'sofa',
@@ -150,8 +175,14 @@ def main():
     rdm4 = rdm(layer4_matrix)
     rdm5 = rdm(layer5_matrix)
 
+    ###### load fmri rdms
+    fmri_mat = hdf5storage.loadmat('/home/CUSACKLAB/annatruzzi/cichy2016/neural_net/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat')
+    EVC = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
+    IT = np.mean(fmri_mat['IT_RDMs'], axis = 0)
 
-    ####### rdm plot
+
+
+    ####### DC plot
     fig=plt.figure()
     ax = fig.add_subplot(111)
     plt.imshow(rdm5,vmin=0,vmax=1.2)
@@ -159,17 +190,11 @@ def main():
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
     ax.set_yticks(ticks)
-    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
+    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
     fig.savefig('rdm5.png', dpi = (800))
     plt.close(fig)
-
-
-    ###### load fmri rdms
-    fmri_mat = hdf5storage.loadmat('/home/CUSACKLAB/annatruzzi/cichy2016/neural_net/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat')
-    EVC = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
-    IT = np.mean(fmri_mat['IT_RDMs'], axis = 0)
 
     ####### EVC plot
     fig=plt.figure()
@@ -179,7 +204,7 @@ def main():
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
     ax.set_yticks(ticks)
-    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
+    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
     fig.savefig('rdmEVC.png', dpi = (800))
@@ -193,15 +218,24 @@ def main():
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
     ax.set_yticks(ticks)
-    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
+    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
     fig.savefig('rdmIT.png', dpi = (800))
     plt.close(fig)
 
+    out = evaluate(submit, target)
+    evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
+    it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
+    score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
+    print('=' * 20)
+    print('fMRI results:')
+    print('Squared correlation of model to EVC (R**2): {}'.format(out['EVC_RDMs'][0]), ' Percentage of noise ceiling: {}'.format(evc_percentNC),'%', '  and significance: {}'.format(out['EVC_RDMs'][1]))
+    print('Squared correlation of model to IT (R**2): {}'.format(out['IT_RDMs'][0]), '  Percentage of noise ceiling: {}'.format(it_percentNC),'%', '  and significance: {}'.format(out['IT_RDMs'][1]))
+    print('SCORE (average of the two correlations): {}'.format(out['score']), '  Percentage of noise ceiling: {}'.format(score_percentNC),'%') 
 
 
 
 if __name__ == '__main__':
-    main()
+    evaluate_dc_fmri()
 
