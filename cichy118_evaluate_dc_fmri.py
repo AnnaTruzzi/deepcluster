@@ -31,6 +31,10 @@ def rdm(act_matrix):
     rdm_matrix = distance.squareform(distance.pdist(act_matrix,metric='correlation'))
     return rdm_matrix
 
+def reorder_od(dict1,order):
+   new_od = collections.OrderedDict([(k,None) for k in order if k in dict1])
+   new_od.update(dict1)
+   return new_od
 
 def lch_order(keys,names_dict,syn_dict):
     ## get LCH distance for the images from the respective synsets and order them by hierarchical clustering + get respective (comprehensible) labels 
@@ -77,9 +81,9 @@ def lch_order(keys,names_dict,syn_dict):
     return orderedNames
 
 
-def numeric_order(keys,names_dict):
+def numeric_order(keys,ordered_names_dict):
     orderedNames = []
-    for item in sorted(names_dict.items()):
+    for item in sorted(ordered_names_dict.items()):
         orderedNames.append(item[1])
     return orderedNames
 
@@ -107,49 +111,41 @@ def evaluate(submission, targets, target_names=['EVC_RDMs', 'IT_RDMs']):
 
 
 
-def main(layers):
-    act = collections.OrderedDict()
-    act = load_dict('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle')
-    img_names = collections.OrderedDict()
-    img_names = load_dict('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle')
-    img_synsets = collections.OrderedDict()
-    img_synsets = load_dict('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_synsets.pickle')
-    
-    #############   get list of ordered activation keys starting from labels_img and img_names dict
+
+def main(layers,act,img_names,img_synsets):
+    act = load_dict(act)
+    img_names = load_dict(img_names)
+    img_names_ordered = reorder_od(img_names, sorted(img_names.keys()))
+    img_synsets = load_dict(img_synsets)
+    img_synsets_ordered = reorder_od(img_synsets, sorted(img_synsets.keys()))
+
+    #############   get list of ordered activation keys starting from labels_img and img_names dict (choose between lch distance or numeric ordering)
 #    orderedNames = lch_order(act.keys(),img_names,img_synsets)
-    orderedNames = numeric_order(act.keys(),img_names)
+    orderedNames = numeric_order(act.keys(),img_names_ordered)
     orderedKeys = []
     for name in orderedNames:
-        number = [i[0] for i in img_names.items() if i[1] == name]
-        key = [i for i in act.keys() if number[0] in i]
+        number = [i[0] for i in img_names_ordered.items() if i[1] == name]
+        key = [k for k in act.keys() if '%s.jpg' %number[0] in k]
         orderedKeys.append(key[0])
 
-    ordered_act = collections.OrderedDict()
-    ordered_act = {k: act[k] for k in orderedKeys}
+    ############ order activations dictionary and reorganize it in order to get one dictionary per layer and image (instead of one dictionary per image)
+    ordered_act = reorder_od(act,orderedKeys)
     
-
-    layer_dict = {}
+    layer_dict = collections.OrderedDict()
     for layer in range(0,len(layers)):
-        layer_dict[layer] = {name : np.mean(np.mean(np.squeeze(value[layer]),axis = 2), axis = 1) for name,value in act.items()}
+        layer_dict[layer] = collections.OrderedDict()
+        for item in ordered_act.items():
+            layer_dict[layer][item[0]] = np.mean(np.mean(np.squeeze(item[1][layer]),axis = 2), axis = 1)
 
 
+    ####### transform layer activations in matrix and calculate rdms
+    layer_matrix_list = []
+    dc_rdm = []
+    for l in layer_dict.keys():
+        curr_layer = np.array([layer_dict[l][i] for i in orderedKeys])
+        layer_matrix_list.append(curr_layer)
+        dc_rdm.append(rdm(curr_layer))
 
-
-    ####### order layer matrices accordingly to the hierarchical clustering of labels based on lch
-    layer1_matrix = np.array([layer1[i] for i in orderedKeys])
-    layer2_matrix = np.array([layer2[i] for i in orderedKeys])
-    layer3_matrix = np.array([layer3[i] for i in orderedKeys])
-    layer4_matrix = np.array([layer4[i] for i in orderedKeys])
-    layer5_matrix = np.array([layer5[i] for i in orderedKeys])
-
-    ## calculate rdms
-    dc1 = rdm(layer1_matrix)
-    dc2 = rdm(layer2_matrix)
-    dc3 = rdm(layer3_matrix)
-    dc4 = rdm(layer4_matrix)
-    dc5 = rdm(layer5_matrix)
-
-    dc_rdm = [dc1, dc2, dc3, dc4, dc5]
 
     ###### load fmri rdms
     fmri_mat = hdf5storage.loadmat('/home/CUSACKLAB/annatruzzi/cichy2016/neural_net/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat')
@@ -157,61 +153,25 @@ def main(layers):
     IT = np.mean(fmri_mat['IT_RDMs'], axis = 0)
     fmri_rdm_dict = {'EVC_RDMs' : EVC, 'IT_RDMs' : IT}
 
-    dc1_EVC = evaluate(dc1, fmri_rdm_dict)
-    #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
-    #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
-    #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
-    print('=' * 20)
-    print('dc1_fMRI results:')
-    print('Squared correlation of model to EVC (R**2): {}'.format(dc1_EVC['EVC_RDMs'][0]), '  and significance: {}'.format(dc1_EVC['EVC_RDMs'][1]))
-    print('Squared correlation of model to IT (R**2): {}'.format(dc1_EVC['IT_RDMs'][0]), '  and significance: {}'.format(dc1_EVC['IT_RDMs'][1]))
-    print('SCORE (average of the two correlations): {}'.format(dc1_EVC['score'])) 
 
-    dc2_EVC = evaluate(dc2, fmri_rdm_dict)
-    #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
-    #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
-    #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
-    print('=' * 20)
-    print('dc2_fMRI results:')
-    print('Squared correlation of model to EVC (R**2): {}'.format(dc2_EVC['EVC_RDMs'][0]), '  and significance: {}'.format(dc2_EVC['EVC_RDMs'][1]))
-    print('Squared correlation of model to IT (R**2): {}'.format(dc2_EVC['IT_RDMs'][0]), '  and significance: {}'.format(dc2_EVC['IT_RDMs'][1]))
-    print('SCORE (average of the two correlations): {}'.format(dc2_EVC['score'])) 
+    ######### evaluate dc vs fmri
+    for layer in range(0,len(layers)):
+        out = evaluate(dc_rdm[layer], fmri_rdm_dict)
+        print('=' * 20)
+        print('dc%s_fMRI results:' %str(layer+1))
+        print('Squared correlation of model to EVC (R**2): {}'.format(out['EVC_RDMs'][0]), '  and significance: {}'.format(out['EVC_RDMs'][1]))
+        print('Squared correlation of model to IT (R**2): {}'.format(out['IT_RDMs'][0]), '  and significance: {}'.format(out['IT_RDMs'][1]))
+        print('SCORE (average of the two correlations): {}'.format(out['score'])) 
 
-    dc3_EVC = evaluate(dc3, fmri_rdm_dict)
-    #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
-    #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
-    #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
-    print('=' * 20)
-    print('dc3_fMRI results:')
-    print('Squared correlation of model to EVC (R**2): {}'.format(dc3_EVC['EVC_RDMs'][0]), '  and significance: {}'.format(dc3_EVC['EVC_RDMs'][1]))
-    print('Squared correlation of model to IT (R**2): {}'.format(dc3_EVC['IT_RDMs'][0]), '  and significance: {}'.format(dc3_EVC['IT_RDMs'][1]))
-    print('SCORE (average of the two correlations): {}'.format(dc3_EVC['score'])) 
-
-    dc4_EVC = evaluate(dc4, fmri_rdm_dict)
-    #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
-    #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
-    #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
-    print('=' * 20)
-    print('dc4_fMRI results:')
-    print('Squared correlation of model to EVC (R**2): {}'.format(dc4_EVC['EVC_RDMs'][0]), '  and significance: {}'.format(dc4_EVC['EVC_RDMs'][1]))
-    print('Squared correlation of model to IT (R**2): {}'.format(dc4_EVC['IT_RDMs'][0]), '  and significance: {}'.format(dc4_EVC['IT_RDMs'][1]))
-    print('SCORE (average of the two correlations): {}'.format(dc4_EVC['score'])) 
-
-    dc5_EVC = evaluate(dc5, fmri_rdm_dict)
-    #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
-    #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
-    #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
-    print('=' * 20)
-    print('dc5_fMRI results:')
-    print('Squared correlation of model to EVC (R**2): {}'.format(dc5_EVC['EVC_RDMs'][0]), '  and significance: {}'.format(dc5_EVC['EVC_RDMs'][1]))
-    print('Squared correlation of model to IT (R**2): {}'.format(dc5_EVC['IT_RDMs'][0]), '  and significance: {}'.format(dc5_EVC['IT_RDMs'][1]))
-    print('SCORE (average of the two correlations): {}'.format(dc5_EVC['score'])) 
-
+        #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
+        #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
+        #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
+ 
 
     ####### DC plot
     fig=plt.figure()
     ax = fig.add_subplot(111)
-    plt.imshow(dc5,vmin=0,vmax=1.2)
+    plt.imshow(dc_rdm[4],vmin=0,vmax=1.2)
     plt.colorbar()
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
@@ -254,5 +214,8 @@ def main(layers):
 
 if __name__ == '__main__':
     layers = ['ReLu1', 'ReLu2', 'ReLu3', 'ReLu4', 'ReLu5']
-    main(layers)
+    act = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle'
+    img_names = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle'
+    img_synsets = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_synsets.pickle'
+    main(layers,act,img_names,img_synsets)
 
