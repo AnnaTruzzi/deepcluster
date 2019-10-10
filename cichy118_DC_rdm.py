@@ -76,12 +76,9 @@ def lch_order(keys,names_dict,syn_dict):
 
 def numeric_order(keys,names_dict):
     orderedNames = []
-    labels_dict = [label.split('/')[-1] for label in keys]
-    for item in labels_dict:
-        name = [i[1] for i in names_dict.items() if i[0] in item]
-        orderedNames.append(name[0])
+    for item in sorted(names_dict.items()):
+        orderedNames.append(item[1])
     return orderedNames
-
 
 
 def main():
@@ -165,7 +162,7 @@ def main():
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
-    plt.savefig('rdm5.png')   # save the figure to file
+    fig.savefig('rdm5.png', dpi = (800))
     plt.close(fig)
 
 
@@ -177,7 +174,7 @@ def main():
     ####### EVC plot
     fig=plt.figure()
     ax = fig.add_subplot(111)
-    plt.imshow(EVC,vmin=0,vmax=0.5)
+    plt.imshow(EVC,vmin=0,vmax=0.6)
     plt.colorbar()
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
@@ -185,13 +182,13 @@ def main():
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
-    plt.savefig('rdmEVC.png')
+    fig.savefig('rdmEVC.png', dpi = (800))
     plt.close(fig)
 
     ####### IT plot
     fig=plt.figure()
     ax = fig.add_subplot(111)
-    plt.imshow(IT,vmin=0,vmax=0.5)
+    plt.imshow(IT,vmin=0,vmax=0.8)
     plt.colorbar()
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
@@ -199,7 +196,7 @@ def main():
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
-    plt.savefig('rdmIT.png')
+    fig.savefig('rdmIT.png', dpi = (800))
     plt.close(fig)
 
 
