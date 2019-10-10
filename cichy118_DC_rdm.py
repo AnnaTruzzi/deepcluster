@@ -165,6 +165,8 @@ def main():
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
+    plt.savefig('rdm5.png')   # save the figure to file
+    plt.close(fig)
 
 
     ###### load fmri rdms
@@ -175,7 +177,7 @@ def main():
     ####### EVC plot
     fig=plt.figure()
     ax = fig.add_subplot(111)
-    plt.imshow(EVC,vmin=0,vmax=1.2)
+    plt.imshow(EVC,vmin=0,vmax=0.5)
     plt.colorbar()
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
@@ -183,11 +185,13 @@ def main():
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
+    plt.savefig('rdmEVC.png')
+    plt.close(fig)
 
     ####### IT plot
     fig=plt.figure()
     ax = fig.add_subplot(111)
-    plt.imshow(IT,vmin=0,vmax=1.2)
+    plt.imshow(IT,vmin=0,vmax=0.5)
     plt.colorbar()
     ticks = np.arange(0,118,1)
     ax.set_xticks(ticks)
@@ -195,6 +199,8 @@ def main():
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 8)
     ax.set_yticklabels(orderedNames,fontsize = 8)
     plt.show()
+    plt.savefig('rdmIT.png')
+    plt.close(fig)
 
 
 
