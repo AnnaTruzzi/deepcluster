@@ -60,8 +60,8 @@ def lch_order(keys,names_dict,syn_dict):
     x = np.array(x,dtype = str)
     y = np.array(y, dtype = str)
     lch_list = np.array(lch_list,dtype = float)
-    lch_matrix = np.stack((x,y,lch_list),axis = 1)
-    Z = linkage(lch_matrix[:,2], 'ward')
+    lch_matrix = np.stack((x,y,(1./lch_list)),axis = 1)
+    Z = linkage(lch_matrix[:,2], 'ward')  #optimal_ordering = True
 
     labels_img = []
     for syn in synsets_list:
@@ -69,14 +69,14 @@ def lch_order(keys,names_dict,syn_dict):
             if item[1] == str(syn).split("'")[1]:
                 labels_img.append(names_dict[item[0]])
 
-    #plt.figure()
+    plt.figure()
     den = dendrogram(Z,
                 orientation='top',
                 labels=labels_img,
                 leaf_font_size=9,
-                distance_sort='descending',
+                distance_sort='ascending',
                 show_leaf_counts=True)
-    #plt.show()
+    plt.show()
     orderedNames = den['ivl']
     return orderedNames
 
@@ -93,7 +93,7 @@ def sq(x):
 
 #defines the spearman correlation
 def spearman(model_rdm, rdms):
-    #model_rdm_sq = sq(model_rdm)
+    model_rdm_sq = sq(model_rdm)
     return [stats.spearmanr(rdm, model_rdm)[0] for rdm in rdms]
 
 
@@ -110,7 +110,7 @@ def evaluate(submission, targets, target_names=['EVC_RDMs', 'IT_RDMs']):
     return out
 
 
-def plot(rdm, vmin, vmax, labels, main, outname):
+def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     fig=plt.figure()
     ax = fig.add_subplot(111)
     plt.imshow(rdm,vmin=vmin,vmax=vmax)
@@ -191,22 +191,22 @@ def main(layers,act,img_names,img_synsets):
  
 
     ####### DC plots with numeric order
-    plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1.png')
-    plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2.png')
-    plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3.png')
-    plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4.png')
-    plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5.png')
+    rdm_plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1.png')
+    rdm_plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2.png')
+    rdm_plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3.png')
+    rdm_plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4.png')
+    rdm_plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5.png')
 
     ####### fmri plots with numeric order
-    plot(EVC, vmin = 0, vmax = 1, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
-    plot(IT, vmin = 0, vmax = 1, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
+    rdm_plot(EVC, vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
+    rdm_plot(IT, vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
 
     ####### DC plots with lch order
-#    plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1_LCHorder.png')
-#    plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2_LCHorder.png')
-#    plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3_LCHorder.png')
-#    plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4_LCHorder.png')
-#    plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5_LCHorder.png')
+#    rdm_plot(dc_rdm[0], vmin = 0, vmax = 0.5, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1_LCHorder.png')
+#    rdm_plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2_LCHorder.png')
+#    rdm_plot(dc_rdm[2], vmin = 0, vmax = 1.2, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3_LCHorder.png')
+#    rdm_plot(dc_rdm[3], vmin = 0, vmax = 1.2, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4_LCHorder.png')
+#    rdm_plot(dc_rdm[4], vmin = 0, vmax = 1.2, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5_LCHorder.png')
 
 
 if __name__ == '__main__':
