@@ -178,8 +178,10 @@ def main(layers,act,img_names,img_synsets):
     ax.set_yticks(ticks)
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
     ax.set_yticklabels(orderedNames,fontsize = 8)
-    #plt.show()
-    fig.savefig('rdm5.png', dpi = (800))
+    manager = plt.get_current_fig_manager()
+    manager.window.showMaximized()
+    plt.show()
+    #fig.savefig('rdm5.png', dpi = (800))
     plt.close(fig)
 
     ####### EVC plot
@@ -192,7 +194,9 @@ def main(layers,act,img_names,img_synsets):
     ax.set_yticks(ticks)
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
     ax.set_yticklabels(orderedNames,fontsize = 8)
-    #plt.show()
+    manager = plt.get_current_fig_manager()
+    manager.window.showMaximized()
+    plt.show()
     fig.savefig('rdmEVC.png', dpi = (800))
     plt.close(fig)
 
@@ -206,7 +210,9 @@ def main(layers,act,img_names,img_synsets):
     ax.set_yticks(ticks)
     ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
     ax.set_yticklabels(orderedNames,fontsize = 8)
-    #plt.show()
+    manager = plt.get_current_fig_manager()
+    manager.window.showMaximized()
+    plt.show()
     fig.savefig('rdmIT.png', dpi = (800))
     plt.close(fig)
 
