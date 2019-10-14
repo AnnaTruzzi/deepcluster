@@ -171,29 +171,42 @@ def main(layers,act,img_names,img_synsets):
 
 
     ######### evaluate dc vs fmri
-    for layer in range(0,len(layers)):
-        out = evaluate(dc_rdm[layer], fmri_rdm_dict)
-        print('=' * 20)
-        print('dc%s_fMRI results:' %str(layer+1))
-        print('Squared correlation of model to EVC (R**2): {}'.format(out['EVC_RDMs'][0]), '  and significance: {}'.format(out['EVC_RDMs'][1]))
-        print('Squared correlation of model to IT (R**2): {}'.format(out['IT_RDMs'][0]), '  and significance: {}'.format(out['IT_RDMs'][1]))
-        print('SCORE (average of the two correlations): {}'.format(out['score'])) 
+    with open('dc_fmri_scores.txt', 'w') as f:
+        for layer in range(0,len(layers)):
+            out = evaluate(dc_rdm[layer], fmri_rdm_dict)
+            print('=' * 20)
+            print('dc%s_fMRI results:' %str(layer+1))
+            print('Squared correlation of model to EVC (R**2): {}'.format(out['EVC_RDMs'][0]), '  and significance: {}'.format(out['EVC_RDMs'][1]))
+            print('Squared correlation of model to IT (R**2): {}'.format(out['IT_RDMs'][0]), '  and significance: {}'.format(out['IT_RDMs'][1]))
+            print('SCORE (average of the two correlations): {}'.format(out['score'])) 
+            f.write('=' * 20 + '\n')
+            f.write('dc%s_fMRI results:' %str(layer+1) + '\n')
+            f.write('Squared correlation of model to EVC (R**2): {}'.format(out['EVC_RDMs'][0]) + '\n')
+            f.write('Squared correlation of model to IT (R**2): {}'.format(out['IT_RDMs'][0]) + '\n')
+            f.write('SCORE (average of the two correlations): {}'.format(out['score']) + '\n') 
 
         #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
         #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
         #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
  
 
-    ####### DC plots
+    ####### DC plots with numeric order
     plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1.png')
     plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2.png')
     plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3.png')
     plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4.png')
     plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5.png')
 
-    ####### fmri plots
+    ####### fmri plots with numeric order
     plot(EVC, vmin = 0, vmax = 1, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
     plot(IT, vmin = 0, vmax = 1, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
+
+    ####### DC plots with lch order
+#    plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1_LCHorder.png')
+#    plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2_LCHorder.png')
+#    plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3_LCHorder.png')
+#    plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4_LCHorder.png')
+#    plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5_LCHorder.png')
 
 
 if __name__ == '__main__':
