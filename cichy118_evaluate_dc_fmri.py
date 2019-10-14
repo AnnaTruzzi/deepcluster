@@ -110,6 +110,22 @@ def evaluate(submission, targets, target_names=['EVC_RDMs', 'IT_RDMs']):
     return out
 
 
+def plot(rdm, vmin, vmax, labels, main, outname):
+    fig=plt.figure()
+    ax = fig.add_subplot(111)
+    plt.imshow(rdm,vmin=vmin,vmax=vmax)
+    plt.colorbar()
+    ticks = np.arange(0,118,1)
+    ax.set_xticks(ticks)
+    ax.set_yticks(ticks)
+    ax.set_xticklabels(labels,rotation = 90, fontsize = 8)
+    ax.set_yticklabels(labels,fontsize = 8)
+    fig.suptitle(main)
+    manager = plt.get_current_fig_manager()
+    manager.window.showMaximized()
+    plt.show()
+    fig.savefig(outname)
+    plt.close(fig)
 
 
 def main(layers,act,img_names,img_synsets):
@@ -168,54 +184,16 @@ def main(layers,act,img_names,img_synsets):
         #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
  
 
-    ####### DC plot
-    fig=plt.figure()
-    ax = fig.add_subplot(111)
-    plt.imshow(dc_rdm[4],vmin=0,vmax=1.2)
-    plt.colorbar()
-    ticks = np.arange(0,118,1)
-    ax.set_xticks(ticks)
-    ax.set_yticks(ticks)
-    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
-    ax.set_yticklabels(orderedNames,fontsize = 8)
-    manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()
-    plt.show()
-    #fig.savefig('rdm5.png', dpi = (800))
-    plt.close(fig)
+    ####### DC plots
+    plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1.png')
+    plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2.png')
+    plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3.png')
+    plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4.png')
+    plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5.png')
 
-    ####### EVC plot
-    fig=plt.figure()
-    ax = fig.add_subplot(111)
-    plt.imshow(EVC,vmin=0,vmax=0.6)
-    plt.colorbar()
-    ticks = np.arange(0,118,1)
-    ax.set_xticks(ticks)
-    ax.set_yticks(ticks)
-    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
-    ax.set_yticklabels(orderedNames,fontsize = 8)
-    manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()
-    plt.show()
-    fig.savefig('rdmEVC.png', dpi = (800))
-    plt.close(fig)
-
-    ####### IT plot
-    fig=plt.figure()
-    ax = fig.add_subplot(111)
-    plt.imshow(IT,vmin=0,vmax=0.8)
-    plt.colorbar()
-    ticks = np.arange(0,118,1)
-    ax.set_xticks(ticks)
-    ax.set_yticks(ticks)
-    ax.set_xticklabels(orderedNames,rotation = 90, fontsize = 3)
-    ax.set_yticklabels(orderedNames,fontsize = 8)
-    manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()
-    plt.show()
-    fig.savefig('rdmIT.png', dpi = (800))
-    plt.close(fig)
-
+    ####### fmri plots
+    plot(EVC, vmin = 0, vmax = 1, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
+    plot(IT, vmin = 0, vmax = 1, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
 
 
 if __name__ == '__main__':
