@@ -26,15 +26,18 @@ def load_dict(path):
         dict=pickle.load(file)
     return dict
 
-
-def rdm(act_matrix):
-    rdm_matrix = distance.squareform(distance.pdist(act_matrix,metric='correlation'))
-    return rdm_matrix
-
 def reorder_od(dict1,order):
    new_od = collections.OrderedDict([(k,None) for k in order if k in dict1])
    new_od.update(dict1)
    return new_od
+   
+def loadmat(matfile):
+    try:
+        f = h5py.File(matfile)
+    except (IOError, OSError):
+        return io.loadmat(matfile)
+    else:
+        return {name: np.transpose(f.get(name)) for name in f.keys()}
 
 def lch_order(keys,names_dict,syn_dict):
     ## get LCH distance for the images from the respective synsets and order them by hierarchical clustering + get respective (comprehensible) labels 
@@ -87,16 +90,14 @@ def numeric_order(keys,ordered_names_dict):
         orderedNames.append(item[1])
     return orderedNames
 
-
-def sq(x):
-    return squareform(x, force='tovector', checks=False)
+def rdm(act_matrix):
+    rdm_matrix = distance.squareform(distance.pdist(act_matrix,metric='correlation'))
+    return rdm_matrix
 
 #defines the spearman correlation
-def spearman(model_rdm, rdms):
-    model_rdm_sq = sq(model_rdm)
-    return [stats.spearmanr(sq(rdm), model_rdm_sq)[0] for rdm in rdms]
-
-[rdm for rdm in rdms]
+def spearman(model_rdm, rdm):
+    out_values = stats.spearmanr(rdm, model_rdm)[0] 
+    return out_values
 
 #computes spearman correlation (R) and R^2, and ttest for p-value.
 def fmri_rdm(model_rdm, fmri_rdms):
@@ -105,11 +106,12 @@ def fmri_rdm(model_rdm, fmri_rdms):
     return np.mean(corr_squared), stats.ttest_1samp(corr_squared, 0)[1]
 
 def evaluate(submission, targets, target_names=['EVC_RDMs', 'IT_RDMs']):
-    out = {name: fmri_rdm(submission, targets[name]) for name in target_names}
+    out = {}
+    for name in target_names:
+        out[name] = fmri_rdm(submission, targets[name])
     out['score'] = np.mean([x[0] for x in out.values()])
     return out
 
-[targets[name] for name in target_names]
 
 def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     fig=plt.figure()
@@ -132,16 +134,16 @@ def rdm_plot(rdm, vmin, vmax, labels, main, outname):
 def main(layers,act,img_names,img_synsets):
     act = load_dict(act)
     img_names = load_dict(img_names)
-    img_names_ordered = reorder_od(img_names, sorted(img_names.keys()))
+    img_names = reorder_od(img_names, sorted(img_names.keys()))
     img_synsets = load_dict(img_synsets)
-    img_synsets_ordered = reorder_od(img_synsets, sorted(img_synsets.keys()))
+    img_synsets = reorder_od(img_synsets, sorted(img_synsets.keys()))
 
-    #############   get list of ordered activation keys starting from labels_img and img_names dict (choose between lch distance or numeric ordering)
-#    orderedNames = lch_order(act.keys(),img_names,img_synsets)
-    orderedNames = numeric_order(act.keys(),img_names_ordered)
+    #############   get list of lch ordered activation keys starting from labels_img and img_names dict
+    orderedNames = lch_order(act.keys(),img_names,img_synsets)
+#    orderedNames = numeric_order(act.keys(),img_names)
     orderedKeys = []
     for name in orderedNames:
-        number = [i[0] for i in img_names_ordered.items() if i[1] == name]
+        number = [i[0] for i in img_names.items() if i[1] == name]
         key = [k for k in act.keys() if '%s.jpg' %number[0] in k]
         orderedKeys.append(key[0])
 
@@ -164,13 +166,29 @@ def main(layers,act,img_names,img_synsets):
         dc_rdm.append(rdm(curr_layer))
 
 
-    ###### load fmri rdms
-    fmri_mat = hdf5storage.loadmat('/home/CUSACKLAB/annatruzzi/cichy2016/neural_net/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat')
-    EVC = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
-    EVC = EVC.astype(EVC.dtype.newbyteorder('=')) 
-    IT = np.mean(fmri_mat['IT_RDMs'], axis = 0)
-    IT = IT.astype(IT.dtype.newbyteorder('='))
-    fmri_rdm_dict = {'EVC_RDMs' : EVC, 'IT_RDMs' : IT}
+    ###### load fmri rdms and re-order them by lch similarity
+    fmri_mat = loadmat('/home/CUSACKLAB/annatruzzi/cichy2016/neural_net/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat')
+    EVC_numericorder = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
+    EVC_tovector = squareform(EVC_numericorder, force='tovector', checks=False)
+    IT_numericorder = np.mean(fmri_mat['IT_RDMs'], axis = 0)
+    IT_tovector = squareform(IT_numericorder, force='tovector', checks=False)
+
+    EVC = []
+    IT = []
+    cmb_mri = list(combinations(img_names.values(),2))
+    cmb_mri_EVC = zip(cmb_mri, EVC_tovector)
+    cmb_mri_IT = zip(cmb_mri, IT_tovector)
+    cmb_orderedNames = list(combinations(orderedNames,2))
+    for combination in cmb_orderedNames:
+        for item_EVC in cmb_mri_EVC:
+            if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
+                EVC.append(item_EVC[1])
+        for item_IT in cmb_mri_IT:
+            if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
+                IT.append(item_IT[1])
+
+    
+    fmri_rdm_dict = {'EVC_RDMs' : squareform(np.asarray(EVC)), 'IT_RDMs' : squareform(np.asarray(IT))}
 
 
     ######### evaluate dc vs fmri
@@ -193,23 +211,16 @@ def main(layers,act,img_names,img_synsets):
         #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
  
 
-    ####### DC plots with numeric order
+    ####### DC plots
     rdm_plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1.png')
     rdm_plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2.png')
     rdm_plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3.png')
     rdm_plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4.png')
     rdm_plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5.png')
 
-    ####### fmri plots with numeric order
-    rdm_plot(EVC, vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
-    rdm_plot(IT, vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
-
-    ####### DC plots with lch order
-#    rdm_plot(dc_rdm[0], vmin = 0, vmax = 0.5, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1_LCHorder.png')
-#    rdm_plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2_LCHorder.png')
-#    rdm_plot(dc_rdm[2], vmin = 0, vmax = 1.2, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3_LCHorder.png')
-#    rdm_plot(dc_rdm[3], vmin = 0, vmax = 1.2, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4_LCHorder.png')
-#    rdm_plot(dc_rdm[4], vmin = 0, vmax = 1.2, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5_LCHorder.png')
+    ####### fmri plots
+    rdm_plot(fmri_rdm_dict['EVC_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
+    rdm_plot(fmri_rdm_dict['IT_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
 
 
 if __name__ == '__main__':
