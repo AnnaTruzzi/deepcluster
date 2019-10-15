@@ -60,7 +60,7 @@ def lch_order(keys,names_dict,syn_dict):
     x = np.array(x,dtype = str)
     y = np.array(y, dtype = str)
     lch_list = np.array(lch_list,dtype = float)
-    lch_matrix = np.stack((x,y,(1./lch_list)),axis = 1)
+    lch_matrix = np.stack((x,y,(1./lch_list)),axis = 1)  ## IMPORTANT: the dendrogram function consideres smallest numbers as index of closeness, lch does the opposite --> 1/lch
     Z = linkage(lch_matrix[:,2], 'ward')  #optimal_ordering = True
 
     labels_img = []
@@ -94,8 +94,9 @@ def sq(x):
 #defines the spearman correlation
 def spearman(model_rdm, rdms):
     model_rdm_sq = sq(model_rdm)
-    return [stats.spearmanr(rdm, model_rdm)[0] for rdm in rdms]
+    return [stats.spearmanr(sq(rdm), model_rdm_sq)[0] for rdm in rdms]
 
+[rdm for rdm in rdms]
 
 #computes spearman correlation (R) and R^2, and ttest for p-value.
 def fmri_rdm(model_rdm, fmri_rdms):
@@ -103,12 +104,12 @@ def fmri_rdm(model_rdm, fmri_rdms):
     corr_squared = np.square(corr)
     return np.mean(corr_squared), stats.ttest_1samp(corr_squared, 0)[1]
 
-
 def evaluate(submission, targets, target_names=['EVC_RDMs', 'IT_RDMs']):
     out = {name: fmri_rdm(submission, targets[name]) for name in target_names}
     out['score'] = np.mean([x[0] for x in out.values()])
     return out
 
+[targets[name] for name in target_names]
 
 def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     fig=plt.figure()
@@ -166,7 +167,9 @@ def main(layers,act,img_names,img_synsets):
     ###### load fmri rdms
     fmri_mat = hdf5storage.loadmat('/home/CUSACKLAB/annatruzzi/cichy2016/neural_net/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat')
     EVC = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
+    EVC = EVC.astype(EVC.dtype.newbyteorder('=')) 
     IT = np.mean(fmri_mat['IT_RDMs'], axis = 0)
+    IT = IT.astype(IT.dtype.newbyteorder('='))
     fmri_rdm_dict = {'EVC_RDMs' : EVC, 'IT_RDMs' : IT}
 
 
