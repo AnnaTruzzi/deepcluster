@@ -1,5 +1,6 @@
 import pickle
 import os
+from gensim.models import KeyedVectors
 
 ## define images names and synsets
 img_names = {'001':'orange','002':'bench','003':'remote','004':'car','005':'stove','006':'man','007':'table','008':'apple','009':'wagon','010':'dog','011':'fox','012':'bus','013':'train','014':'ipod',
@@ -28,6 +29,9 @@ img_synsets = {'001':'orange.n.01','002':'bench.n.01','003':'remote_control.n.01
                 '100':'coffee_maker.n.01','101':'television_receiver.n.01','102':'pretzel.n.01','103':'artichoke.n.02','104':'golf_ball.n.01','105':'alarm_clock.n.01','106':'traffic_light.n.01',
                 '107':'bottle.n.01','108':'pan.n.01','109':'weight.n.02','110':'ball.n.01','111':'sweet_pepper.n.02','112':'corkscrew.n.01','113':'tennis_ball.n.01','114':'mouse.n.04','115':'mug.n.04',
                 '116':'keyboard.n.01','117':'can_opener.n.01','118':'fan.n.01'}
+
+
+model = KeyedVectors.load_word2vec_format('/home/CUSACKLAB/annatruzzi/deepcluster/GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
 
 
 with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle', 'wb') as handle:

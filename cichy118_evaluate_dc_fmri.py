@@ -19,6 +19,7 @@ import hdf5storage
 from scipy import stats
 from scipy.spatial.distance import squareform
 import collections
+from gensim.models import KeyedVectors
 
 ## load activations dictionary 
 def load_dict(path):
@@ -90,6 +91,38 @@ def numeric_order(keys,ordered_names_dict):
         orderedNames.append(item[1])
     return orderedNames
 
+
+def word2vec_order(keys,ordered_names_dict):
+    orderedNames = []
+    model = KeyedVectors.load_word2vec_format('/home/CUSACKLAB/annatruzzi/deepcluster/GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
+    cmb = list(combinations(ordered_names_dict.values(),2))
+    w2v_list = []
+    x = []
+    y = []
+    for item in cmb:
+        x.append(item[0])
+        y.append(item[1])
+        w2v_distance = model.similarity(item[0],item[1])
+        w2v_list.append(w2v_distance)
+    
+    x = np.array(x,dtype = str)
+    y = np.array(y, dtype = str)
+    w2v_list = np.array(w2v_list,dtype = float)
+    w2v_matrix = np.stack((x,y,(1/w2v_list)),axis = 1)  
+    Z = linkage(w2v_matrix[:,2], 'ward')
+
+    den = dendrogram(Z,
+        orientation='top',
+        labels=ordered_names_dict.values(),
+        leaf_font_size=9,
+        distance_sort='ascending',
+        show_leaf_counts=True)
+    plt.show()
+    orderedNames = den['ivl']
+
+    return orderedNames
+
+
 def rdm(act_matrix):
     rdm_matrix = distance.squareform(distance.pdist(act_matrix,metric='correlation'))
     return rdm_matrix
@@ -131,7 +164,7 @@ def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     plt.close(fig)
 
 
-def main(layers,act,img_names,img_synsets):
+def main(layers,act,img_names,img_synsets,fmri_path):
     act = load_dict(act)
     img_names = load_dict(img_names)
     img_names = reorder_od(img_names, sorted(img_names.keys()))
@@ -141,6 +174,7 @@ def main(layers,act,img_names,img_synsets):
     #############   get list of lch ordered activation keys starting from labels_img and img_names dict
     orderedNames = lch_order(act.keys(),img_names,img_synsets)
 #    orderedNames = numeric_order(act.keys(),img_names)
+#    orderedNames = word2vec_order(act.keys(),img_names)
     orderedKeys = []
     for name in orderedNames:
         number = [i[0] for i in img_names.items() if i[1] == name]
@@ -167,12 +201,13 @@ def main(layers,act,img_names,img_synsets):
 
 
     ###### load fmri rdms and re-order them by lch similarity
-    fmri_mat = loadmat('/home/CUSACKLAB/annatruzzi/cichy2016/neural_net/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat')
+    fmri_mat = loadmat(fmri_path)
     EVC_numericorder = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
     EVC_tovector = squareform(EVC_numericorder, force='tovector', checks=False)
     IT_numericorder = np.mean(fmri_mat['IT_RDMs'], axis = 0)
     IT_tovector = squareform(IT_numericorder, force='tovector', checks=False)
 
+    
     EVC = []
     IT = []
     cmb_mri = list(combinations(img_names.values(),2))
@@ -186,11 +221,11 @@ def main(layers,act,img_names,img_synsets):
         for item_IT in cmb_mri_IT:
             if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
                 IT.append(item_IT[1])
-
+    
     
     fmri_rdm_dict = {'EVC_RDMs' : squareform(np.asarray(EVC)), 'IT_RDMs' : squareform(np.asarray(IT))}
 
-
+    
     ######### evaluate dc vs fmri
     with open('dc_fmri_scores.txt', 'w') as f:
         for layer in range(0,len(layers)):
@@ -218,9 +253,12 @@ def main(layers,act,img_names,img_synsets):
     rdm_plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4.png')
     rdm_plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5.png')
 
+    
+
     ####### fmri plots
     rdm_plot(fmri_rdm_dict['EVC_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
     rdm_plot(fmri_rdm_dict['IT_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
+
 
 
 if __name__ == '__main__':
@@ -228,5 +266,6 @@ if __name__ == '__main__':
     act = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle'
     img_names = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle'
     img_synsets = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_synsets.pickle'
-    main(layers,act,img_names,img_synsets)
+    fmri_path = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat'
+    main(layers,act,img_names,img_synsets,fmri_path)
 
