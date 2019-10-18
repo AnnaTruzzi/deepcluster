@@ -3,19 +3,19 @@ import os
 from gensim.models import KeyedVectors
 
 ## define images names and synsets
-img_names = {'001':'orange','002':'bench','003':'remote','004':'car','005':'stove','006':'man','007':'table','008':'apple','009':'wagon','010':'dog','011':'fox','012':'bus','013':'train','014':'ipod',
-                '015':'pizza','016':'bird','017':'horse','018':'laptop','019':'bear','020':'basketball','021':'piano','022':'guitar','023':'baseball','024':'seal','025':'chair','026':'orangutan','027':'bowl',
+img_names_cichy118 = {'001':'orange','002':'bench','003':'remote','004':'car','005':'stove','006':'man','007':'table','008':'apple','009':'wagon','010':'dog','011':'fox','012':'bus','013':'train','014':'ipod',
+                '015':'pizza','016':'bird','017':'horse','018':'laptop','019':'bear','020':'basketball ball','021':'piano','022':'guitar','023':'baseball ball','024':'seal','025':'chair','026':'orangutan','027':'bowl',
                 '028':'tiger','029':'moped','030':'tie','031':'printer','032':'lion','033':'neil','034':'drum','035':'bow','036':'fig','037':'butterfly','038':'lamp','039':'banana','040':'sofa',
-                '041':'lemon','042':'hoover','043':'hammer','044':'sunglasses','045':'bike','046':'rabbit','047':'measuring jug','048':'elephant','049':'microwave','050':'volleyball','051':'strawberry',
-                '052':'sheep','053':'frog','054':'washing machine','055':'fridge','056':'turtle','057':'axe','058':'helmet','059':'camel','060':'lipstick','061':'airplane','062':'dishwasher','063':'burger',
-                '064':'backpack','065':'purse','066':'hamster','067':'microphone','068':'mushroom','069':'cow','070':'violin','071':'orca','072':'cucumber','073':'termometer','074':'pineapple','075':'harp',
-                '076':'squirrel','077':'notebook','078':'trumpet','079':'plastic bag','080':'jug','081':'snail','082':'toaster','083':'benjo','084':'screwdriver','085':'snowbike','086':'pig',
-                '087':'pomegranate','088':'accordion','089':'tennis racket','090':'bagel','091':'trombone','092':'syringe','093':'fish','094':'hair drier','095':'starfish','096':'hot dog','097':'ladybug',
-                '098':'aircraft carrier','099':'jellyfish','100':'coffee machine','101':'television','102':'pretzel','103':'artichoke','104':'golf ball','105':'alarm clock','106':'traffic light',
-                '107':'bottle','108':'pan','109':'weights','110':'football ball','111':'bellpepper','112':'corkscrew','113':'tennis ball','114':'computer mouse','115':'mug','116':'keyboard',
+                '041':'lemon','042':'hoover','043':'hammer','044':'sunglasses','045':'bike','046':'rabbit','047':'beaker','048':'elephant','049':'microwave','050':'volleyball ball','051':'strawberry',
+                '052':'sheep','053':'frog','054':'washing machine','055':'fridge','056':'turtle','057':'ax','058':'helmet','059':'camel','060':'lipstick','061':'airplane','062':'dishwasher','063':'burger',
+                '064':'backpack','065':'purse','066':'hamster','067':'microphone','068':'mushroom','069':'cow','070':'violin','071':'orca','072':'cucumber','073':'thermometer','074':'pineapple','075':'harp',
+                '076':'squirrel','077':'notebook','078':'trumpet','079':'plastic bag','080':'jug','081':'snail','082':'toaster','083':'banjo','084':'screwdriver','085':'snowmobile','086':'pig',
+                '087':'pomegranate','088':'accordion','089':'racket','090':'bagel','091':'trombone','092':'syringe','093':'fish','094':'hair_dryer','095':'starfish','096':'hotdog','097':'ladybug',
+                '098':'aircraft carrier','099':'jellyfish','100':'coffee maker','101':'television','102':'pretzel','103':'artichoke','104':'golf ball','105':'alarm clock','106':'traffic light',
+                '107':'bottle','108':'pan','109':'weights','110':'football ball','111':'sweet pepper','112':'corkscrew','113':'tennis ball','114':'computer mouse','115':'mug','116':'keyboard',
                 '117':'can opener','118':'fan'}
 
-img_synsets = {'001':'orange.n.01','002':'bench.n.01','003':'remote_control.n.01','004':'car.n.01','005':'stove.n.01','006':'man.n.03','007':'table.n.02','008':'apple.n.01','009':'cart.n.01','010':'dog.n.01',
+img_synsets_cichy118 = {'001':'orange.n.01','002':'bench.n.01','003':'remote_control.n.01','004':'car.n.01','005':'stove.n.01','006':'man.n.03','007':'table.n.02','008':'apple.n.01','009':'cart.n.01','010':'dog.n.01',
                 '011':'fox.n.01','012':'bus.n.01','013':'train.n.01','014':'ipod.n.01','015':'pizza.n.01','016':'bird.n.01','017':'horse.n.01','018':'laptop.n.01','019':'bear.n.01','020':'basketball.n.02',
                 '021':'piano.n.01','022':'guitar.n.01','023':'baseball.n.02','024':'seal.n.09','025':'chair.n.01','026':'orangutan.n.01','027':'bowl.n.01','028':'tiger.n.02','029':'moped.n.01','030':'necktie.n.01',
                 '031':'printer.n.03','032':'lion.n.01','033':'nail.n.02','034':'drum.n.01','035':'bow.n.04','036':'fig.n.04','037':'butterfly.n.01','038':'lamp.n.02','039':'banana.n.02',
@@ -31,10 +31,33 @@ img_synsets = {'001':'orange.n.01','002':'bench.n.01','003':'remote_control.n.01
                 '116':'keyboard.n.01','117':'can_opener.n.01','118':'fan.n.01'}
 
 
-model = KeyedVectors.load_word2vec_format('/home/CUSACKLAB/annatruzzi/deepcluster/GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
+
+img_names_niko92 = {'01':'hand_1','02':'ear','03':'hand_2','04':'man_1','05':'hair','06':'woman_1','07':'woman_2','08':'hand_3','09':'eye','10':'man_2','11':'hand_4','12':'fist','13':'human face_1','14':'human face_2',
+                '15':'human face_3','16':'human face_4','17':'human face_5','18':'human face_6','19':'human face_7','20':'human face_8','21':'human face_9','22':'human face_10','23':'human face_11','24':'human face_12',
+                '25':'armadillo','26':'camel','27':'snake_1','28':'wolf','29':'monkey_1','30':'ostrich','31':'snake_2','32':'zebra','33':'elephant','34':'monkey_2','35':'sheep','36':'frog','37':'cow',
+                '38':'goat','39':'monkey face_1','40':'monkey face_2','41':'dog_1','42':'dog_2','43':'monkey face_3','44':'monkey face_4','45':'lizard','46':'giraffe','47':'lion','48':'monkey_3','49':'carrot',
+                '50':'grape','51':'potato','52':'bush','53':'chili pepper','54':'salad','55':'kiwi','56':'zucchini','57':'leaf','58':'apple','59':'radish','60':'eggplant','61':'lake','62':'pine cone',
+                '63':'banana','64':'tomato','65':'garlic','66':'meadow','67':'tree','68':'pineapple','69':'pear','70':'sweet pepper','71':'waterfall','72':'city','73':'bottle','74':'light bulb',
+                '75':'roundabout sign','76':'musicassette','77':'bell tower','78':'flag','79':'key','80':'pliers','81':'monument','82':'door','83':'hammer','84':'chair','85':'gun','86':'house_1',
+                '87':'dome','88':'umbrella','89':'mobile phone','90':'house_2','91':'stove','92':'road sign'}
+
+img_synsets_niko92 = {'001':'hand','002':'ear','003':'hand','004':'man','005':'hair','006':'woman','007':'woman','008':'hand','009':'eye','010':'man','011':'hand','012':'fist','013':'human face','014':'human face',
+                '015':'human face','016':'human face','017':'human face','018':'human face','019':'human face','020':'human face','021':'human face','022':'human face','023':'human face','024':'human face',
+                '025':'armadillo','026':'camel','027':'snake','028':'wolf','029':'monkey','030':'ostrich','031':'snake','032':'zebra','033':'elephant','034':'monkey','035':'sheep','036':'frog','037':'cow',
+                '038':'goat','039':'monkey face','040':'monkey face','041':'dog','042':'dog','043':'monkey face','044':'monkey face','045':'lizard','046':'giraffe','047':'lion','048':'monkey','049':'carrot',
+                '050':'grape','051':'potato','052':'bush','053':'chili pepper','054':'salad','055':'kiwi','056':'zucchini','057':'leaf','058':'apple','059':'radish','060':'eggplant','061':'lake','062':'pine cone',
+                '063':'banana','064':'tomato','065':'garlic','066':'meadow','067':'tree','068':'pineapple','069':'pear','070':'sweet pepper','071':'waterfall','072':'city','073':'bottle','074':'light bulb',
+                '075':'roundabout sign','076':'musicassette','077':'bell tower','078':'flag','079':'key','080':'pliers','081':'monument','082':'door','083':'hammer','084':'chair','085':'gun','086':'house',
+                '087':'dome','088':'umbrella','089':'mobile phone','090':'house','091':'stove','092':'road sign'}
+
 
 
 with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle', 'wb') as handle:
-    pickle.dump(img_names, handle)
+    pickle.dump(img_names_cichy118, handle)
 with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_synsets.pickle', 'wb') as handle:
-    pickle.dump(img_synsets, handle)
+    pickle.dump(img_synsets_cichy118, handle)
+
+with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_img_names.pickle', 'wb') as handle:
+    pickle.dump(img_names_niko92, handle)
+with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_img_synsets.pickle', 'wb') as handle:
+    pickle.dump(img_synsets_niko92, handle)

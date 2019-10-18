@@ -21,6 +21,7 @@ from scipy.spatial.distance import squareform
 import collections
 from gensim.models import KeyedVectors
 
+
 ## load activations dictionary 
 def load_dict(path):
     with open(path,'rb') as file:
@@ -40,7 +41,7 @@ def loadmat(matfile):
     else:
         return {name: np.transpose(f.get(name)) for name in f.keys()}
 
-def lch_order(keys,names_dict,syn_dict):
+def lch_order(keys,ordered_names_dict,syn_dict):
     ## get LCH distance for the images from the respective synsets and order them by hierarchical clustering + get respective (comprehensible) labels 
     labels_dict = [label.split('/')[-1] for label in keys]
     synsets_list = []
@@ -71,7 +72,7 @@ def lch_order(keys,names_dict,syn_dict):
     for syn in synsets_list:
         for item in syn_dict.items():
             if item[1] == str(syn).split("'")[1]:
-                labels_img.append(names_dict[item[0]])
+                labels_img.append(ordered_names_dict[item[0]])
 
     plt.figure()
     den = dendrogram(Z,
@@ -85,31 +86,29 @@ def lch_order(keys,names_dict,syn_dict):
     return orderedNames
 
 
-def numeric_order(keys,ordered_names_dict):
+def presentation_order(keys,ordered_names_dict,syn_dict):
     orderedNames = []
     for item in sorted(ordered_names_dict.items()):
         orderedNames.append(item[1])
     return orderedNames
 
 
-def word2vec_order(keys,ordered_names_dict):
+def w2v_order(keys,ordered_names_dict,syn_dict):
     orderedNames = []
-    model = KeyedVectors.load_word2vec_format('/home/CUSACKLAB/annatruzzi/deepcluster/GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
-    cmb = list(combinations(ordered_names_dict.values(),2))
-    w2v_list = []
-    x = []
-    y = []
-    for item in cmb:
-        x.append(item[0])
-        y.append(item[1])
-        w2v_distance = model.similarity(item[0],item[1])
-        w2v_list.append(w2v_distance)
-    
-    x = np.array(x,dtype = str)
-    y = np.array(y, dtype = str)
-    w2v_list = np.array(w2v_list,dtype = float)
-    w2v_matrix = np.stack((x,y,(1/w2v_list)),axis = 1)  
-    Z = linkage(w2v_matrix[:,2], 'ward')
+    model = KeyedVectors.load_word2vec_format('/home/CUSACKLAB/annatruzzi/GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
+    w2v = []
+    for value in ordered_names_dict.values():
+        if len(value.split(' ')) == 1:
+            w2v.append(model[value])
+        else:
+            word1 = value.split(' ')[0]
+            word2 = value.split(' ')[1]
+            vector = model[word1] + model[word2]
+            w2v.append(vector)
+
+    w2v = np.array(w2v,dtype = float)
+    rdm_w2v = distance.squareform(distance.pdist(w2v,metric='correlation')) 
+    Z = linkage(squareform(rdm_w2v), 'ward')
 
     den = dendrogram(Z,
         orientation='top',
@@ -117,7 +116,7 @@ def word2vec_order(keys,ordered_names_dict):
         leaf_font_size=9,
         distance_sort='ascending',
         show_leaf_counts=True)
-    plt.show()
+    #plt.show()
     orderedNames = den['ivl']
 
     return orderedNames
@@ -151,7 +150,7 @@ def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     ax = fig.add_subplot(111)
     plt.imshow(rdm,vmin=vmin,vmax=vmax)
     plt.colorbar()
-    ticks = np.arange(0,118,1)
+    ticks = np.arange(0,len(labels),1)
     ax.set_xticks(ticks)
     ax.set_yticks(ticks)
     ax.set_xticklabels(labels,rotation = 90, fontsize = 8)
@@ -164,7 +163,7 @@ def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     plt.close(fig)
 
 
-def main(layers,act,img_names,img_synsets,fmri_path):
+def main(layers,act,img_names,img_synsets,fmri_path, network_used, comparison_with, order_method):
     act = load_dict(act)
     img_names = load_dict(img_names)
     img_names = reorder_od(img_names, sorted(img_names.keys()))
@@ -172,9 +171,8 @@ def main(layers,act,img_names,img_synsets,fmri_path):
     img_synsets = reorder_od(img_synsets, sorted(img_synsets.keys()))
 
     #############   get list of lch ordered activation keys starting from labels_img and img_names dict
-    orderedNames = lch_order(act.keys(),img_names,img_synsets)
-#    orderedNames = numeric_order(act.keys(),img_names)
-#    orderedNames = word2vec_order(act.keys(),img_names)
+    order_function = order_method + '_order(act.keys(),img_names,img_synsets)'
+    orderedNames = eval(order_function)
     orderedKeys = []
     for name in orderedNames:
         number = [i[0] for i in img_names.items() if i[1] == name]
@@ -202,32 +200,34 @@ def main(layers,act,img_names,img_synsets,fmri_path):
 
     ###### load fmri rdms and re-order them by lch similarity
     fmri_mat = loadmat(fmri_path)
-    EVC_numericorder = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
-    EVC_tovector = squareform(EVC_numericorder, force='tovector', checks=False)
-    IT_numericorder = np.mean(fmri_mat['IT_RDMs'], axis = 0)
-    IT_tovector = squareform(IT_numericorder, force='tovector', checks=False)
+    EVC = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
+    IT = np.mean(fmri_mat['IT_RDMs'], axis = 0)
 
+    if order_method is not 'presentation':
+        EVC_tovector = squareform(EVC, force='tovector', checks=False)
+        IT_tovector = squareform(IT, force='tovector', checks=False)
+        EVC_ordered = []
+        IT_ordered = []
+        cmb_mri = list(combinations(img_names.values(),2))
+        cmb_mri_EVC = zip(cmb_mri, EVC_tovector)
+        cmb_mri_IT = zip(cmb_mri, IT_tovector)
+        cmb_orderedNames = list(combinations(orderedNames,2))
+        for combination in cmb_orderedNames:
+            for item_EVC in cmb_mri_EVC:
+                if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
+                    EVC_ordered.append(item_EVC[1])
+            for item_IT in cmb_mri_IT:
+                if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
+                    IT_ordered.append(item_IT[1])
+        EVC = squareform(np.asarray(EVC))
+        IT = squareform(np.asarray(IT))
     
-    EVC = []
-    IT = []
-    cmb_mri = list(combinations(img_names.values(),2))
-    cmb_mri_EVC = zip(cmb_mri, EVC_tovector)
-    cmb_mri_IT = zip(cmb_mri, IT_tovector)
-    cmb_orderedNames = list(combinations(orderedNames,2))
-    for combination in cmb_orderedNames:
-        for item_EVC in cmb_mri_EVC:
-            if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
-                EVC.append(item_EVC[1])
-        for item_IT in cmb_mri_IT:
-            if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
-                IT.append(item_IT[1])
-    
-    
-    fmri_rdm_dict = {'EVC_RDMs' : squareform(np.asarray(EVC)), 'IT_RDMs' : squareform(np.asarray(IT))}
+    fmri_rdm_dict = {'EVC_RDMs' : EVC, 'IT_RDMs' : IT}
 
     
     ######### evaluate dc vs fmri
-    with open('dc_fmri_scores.txt', 'w') as f:
+    out_file_name = '_'.join([network_used, comparison_with, order_method])
+    with open('correaltion_' + out_file_name + '.txt', 'w') as f:
         for layer in range(0,len(layers)):
             out = evaluate(dc_rdm[layer], fmri_rdm_dict)
             print('=' * 20)
@@ -247,25 +247,32 @@ def main(layers,act,img_names,img_synsets,fmri_path):
  
 
     ####### DC plots
-    rdm_plot(dc_rdm[0], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 1', outname = 'rdm_dc1.png')
-    rdm_plot(dc_rdm[1], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 2', outname = 'rdm_dc2.png')
-    rdm_plot(dc_rdm[2], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 3', outname = 'rdm_dc3.png')
-    rdm_plot(dc_rdm[3], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 4', outname = 'rdm_dc4.png')
-    rdm_plot(dc_rdm[4], vmin = 0, vmax = 1, labels = orderedNames, main = 'DC layer 5', outname = 'rdm_dc5.png')
-
+    for i,layer in enumerate(layers):
+        main = network_used + ' layer '+str(layer)
+        outname = 'rdm_' + out_file_name + '_' + layer
+        rdm_plot(dc_rdm[i], vmin = 0, vmax = 1, labels = orderedNames, main = main, outname = outname + '.png')
     
 
     ####### fmri plots
-    rdm_plot(fmri_rdm_dict['EVC_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC.png')
-    rdm_plot(fmri_rdm_dict['IT_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT.png')
+
+    rdm_plot(fmri_rdm_dict['EVC_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC_' + out_file_name + '.png')
+    rdm_plot(fmri_rdm_dict['IT_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT_' + out_file_name + '.png')
 
 
 
 if __name__ == '__main__':
-    layers = ['ReLu1', 'ReLu2', 'ReLu3', 'ReLu4', 'ReLu5']
-    act = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle'
-    img_names = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle'
-    img_synsets = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_synsets.pickle'
-    fmri_path = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat'
-    main(layers,act,img_names,img_synsets,fmri_path)
+    layers_dc = ['ReLu1', 'ReLu2', 'ReLu3', 'ReLu4', 'ReLu5']
+
+    act_dc_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle'
+    img_names_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle'
+    img_synsets_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_synsets.pickle'
+    fmri_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat'
+
+    act_dc_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations.pickle'
+    img_names_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/niko92_img_names.pickle'   
+    img_synsets_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/niko92_img_synsets.pickle'  
+    fmri_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/92_Image_Set/target_fmri.mat'
+
+
+    main(layers_dc,act_dc_niko92,img_names_niko92,img_synsets_niko92,fmri_niko92, 'DC' ,'niko92', 'presentation')
 
