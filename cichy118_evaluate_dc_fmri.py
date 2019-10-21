@@ -19,8 +19,7 @@ import hdf5storage
 from scipy import stats
 from scipy.spatial.distance import squareform
 import collections
-from gensim.models import KeyedVectors
-
+import re
 
 ## load activations dictionary 
 def load_dict(path):
@@ -41,7 +40,7 @@ def loadmat(matfile):
     else:
         return {name: np.transpose(f.get(name)) for name in f.keys()}
 
-def lch_order(keys,ordered_names_dict,syn_dict):
+def lch_order(keys,ordered_names_dict,syn_dict,w2v_dict):
     ## get LCH distance for the images from the respective synsets and order them by hierarchical clustering + get respective (comprehensible) labels 
     labels_dict = [label.split('/')[-1] for label in keys]
     synsets_list = []
@@ -86,18 +85,19 @@ def lch_order(keys,ordered_names_dict,syn_dict):
     return orderedNames
 
 
-def presentation_order(keys,ordered_names_dict,syn_dict):
+def presentation_order(keys,ordered_names_dict,syn_dict,w2v_dict):
     orderedNames = []
     for item in sorted(ordered_names_dict.items()):
         orderedNames.append(item[1])
     return orderedNames
 
 
-def w2v_order(keys,ordered_names_dict,syn_dict):
+def w2v_order(keys,ordered_names_dict,syn_dict,w2v_dict):
     orderedNames = []
     model = KeyedVectors.load_word2vec_format('/home/CUSACKLAB/annatruzzi/GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
     w2v = []
-    for value in ordered_names_dict.values():
+    for key in ordered_names_dict.keys():
+        value = w2v_dict[key]
         if len(value.split(' ')) == 1:
             w2v.append(model[value])
         else:
@@ -116,7 +116,7 @@ def w2v_order(keys,ordered_names_dict,syn_dict):
         leaf_font_size=9,
         distance_sort='ascending',
         show_leaf_counts=True)
-    #plt.show()
+    plt.show()
     orderedNames = den['ivl']
 
     return orderedNames
@@ -163,15 +163,25 @@ def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     plt.close(fig)
 
 
-def main(layers,act,img_names,img_synsets,fmri_path, network_used, comparison_with, order_method):
-    act = load_dict(act)
-    img_names = load_dict(img_names)
+def main(layers, network_used, comparison_with, order_method,training):
+    act_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_activations_'+ training + '.pickle'
+    img_names_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_img_names.pickle'
+    img_synsets_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_img_synsets.pickle'
+    img_w2v_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_img_w2v.pickle'
+
+    number = (re.findall('\d+', comparison_with))
+    fmri_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/'+ number[0]+'_Image_Set/target_fmri.mat'
+
+    act = load_dict(act_pth)
+    img_names = load_dict(img_names_pth)
     img_names = reorder_od(img_names, sorted(img_names.keys()))
-    img_synsets = load_dict(img_synsets)
+    img_synsets = load_dict(img_synsets_pth)
     img_synsets = reorder_od(img_synsets, sorted(img_synsets.keys()))
+    img_w2v = load_dict(img_w2v_pth)
+    img_w2v = reorder_od(img_w2v, sorted(img_w2v.keys()))
 
     #############   get list of lch ordered activation keys starting from labels_img and img_names dict
-    order_function = order_method + '_order(act.keys(),img_names,img_synsets)'
+    order_function = order_method + '_order(act.keys(),img_names,img_synsets,img_w2v)'
     orderedNames = eval(order_function)
     orderedKeys = []
     for name in orderedNames:
@@ -199,7 +209,7 @@ def main(layers,act,img_names,img_synsets,fmri_path, network_used, comparison_wi
 
 
     ###### load fmri rdms and re-order them by lch similarity
-    fmri_mat = loadmat(fmri_path)
+    fmri_mat = loadmat(fmri_pth)
     EVC = np.mean(fmri_mat['EVC_RDMs'],axis = 0)
     IT = np.mean(fmri_mat['IT_RDMs'], axis = 0)
 
@@ -213,14 +223,17 @@ def main(layers,act,img_names,img_synsets,fmri_path, network_used, comparison_wi
         cmb_mri_IT = zip(cmb_mri, IT_tovector)
         cmb_orderedNames = list(combinations(orderedNames,2))
         for combination in cmb_orderedNames:
+            print combination
             for item_EVC in cmb_mri_EVC:
                 if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
                     EVC_ordered.append(item_EVC[1])
+                    print item_EVC
             for item_IT in cmb_mri_IT:
                 if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
                     IT_ordered.append(item_IT[1])
-        EVC = squareform(np.asarray(EVC))
-        IT = squareform(np.asarray(IT))
+                    print item_IT
+        EVC = squareform(np.asarray(EVC),force='tovector', checks=False)
+        IT = squareform(np.asarray(IT),force='tovector', checks=False)
     
     fmri_rdm_dict = {'EVC_RDMs' : EVC, 'IT_RDMs' : IT}
 
@@ -261,18 +274,7 @@ def main(layers,act,img_names,img_synsets,fmri_path, network_used, comparison_wi
 
 
 if __name__ == '__main__':
+
     layers_dc = ['ReLu1', 'ReLu2', 'ReLu3', 'ReLu4', 'ReLu5']
-
-    act_dc_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations.pickle'
-    img_names_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_names.pickle'
-    img_synsets_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_img_synsets.pickle'
-    fmri_cichy118 = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/118_Image_Set/target_fmri.mat'
-
-    act_dc_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations.pickle'
-    img_names_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/niko92_img_names.pickle'   
-    img_synsets_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/niko92_img_synsets.pickle'  
-    fmri_niko92 = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/92_Image_Set/target_fmri.mat'
-
-
-    main(layers_dc,act_dc_niko92,img_names_niko92,img_synsets_niko92,fmri_niko92, 'DC' ,'niko92', 'presentation')
+    main(layers_dc, 'DC' ,'niko92', 'w2v', 'pretrained')
 

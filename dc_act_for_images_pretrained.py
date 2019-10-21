@@ -134,9 +134,9 @@ if __name__ == '__main__':
     model = models.alexnet(sobel=True, bn=True, out=10000) 
     model.load_state_dict(checkpoint_new)
     model.cuda()
-    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/92_Image_Set/92images' 
+    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/118_Image_Set/118images' 
     act = get_activations(image_pth)
 
-    with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations.pickle', 'wb') as handle:
+    with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations_pretrained.pickle', 'wb') as handle:
         pickle.dump(act, handle)
 

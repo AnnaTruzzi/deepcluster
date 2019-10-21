@@ -1,25 +1,25 @@
 ====================
 dc1_fMRI results:
-Squared correlation of model to EVC (R**2): 0.174434890567
-Squared correlation of model to IT (R**2): 0.171485628182
-SCORE (average of the two correlations): 0.172960259375
+Squared correlation of model to EVC (R**2): 0.189119235002
+Squared correlation of model to IT (R**2): 0.177849386858
+SCORE (average of the two correlations): 0.18348431093
 ====================
 dc2_fMRI results:
-Squared correlation of model to EVC (R**2): 0.198905915791
-Squared correlation of model to IT (R**2): 0.177103355825
-SCORE (average of the two correlations): 0.188004635808
+Squared correlation of model to EVC (R**2): 0.201577077312
+Squared correlation of model to IT (R**2): 0.191361212745
+SCORE (average of the two correlations): 0.196469145029
 ====================
 dc3_fMRI results:
-Squared correlation of model to EVC (R**2): 0.19583677969
-Squared correlation of model to IT (R**2): 0.174677518515
-SCORE (average of the two correlations): 0.185257149103
+Squared correlation of model to EVC (R**2): 0.208517224425
+Squared correlation of model to IT (R**2): 0.203357762079
+SCORE (average of the two correlations): 0.205937493252
 ====================
 dc4_fMRI results:
-Squared correlation of model to EVC (R**2): 0.18843826169
-Squared correlation of model to IT (R**2): 0.175263323425
-SCORE (average of the two correlations): 0.181850792558
+Squared correlation of model to EVC (R**2): 0.206964383612
+Squared correlation of model to IT (R**2): 0.201990816464
+SCORE (average of the two correlations): 0.204477600038
 ====================
 dc5_fMRI results:
-Squared correlation of model to EVC (R**2): 0.173648948062
-Squared correlation of model to IT (R**2): 0.188231334387
-SCORE (average of the two correlations): 0.180940141224
+Squared correlation of model to EVC (R**2): 0.199454090469
+Squared correlation of model to IT (R**2): 0.19525555064
+SCORE (average of the two correlations): 0.197354820555
