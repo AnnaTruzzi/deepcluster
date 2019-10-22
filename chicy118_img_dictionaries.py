@@ -70,7 +70,7 @@ img_w2v_niko92 = {'01':'hand','02':'ear','03':'hand','04':'man','05':'hair','06'
                 '38':'goat','39':'monkey face','40':'monkey face','41':'dog','42':'dog','43':'monkey face','44':'monkey face','45':'lizard','46':'giraffe','47':'lion','48':'monkey','49':'carrot',
                 '50':'grape','51':'potato','52':'bush','53':'jalapeno','54':'lettuce','55':'kiwi','56':'zucchini','57':'leaf','58':'apple','59':'radish','60':'eggplant','61':'lake','62':'pine cone',
                 '63':'banana','64':'tomato','65':'garlic','66':'hayfield','67':'tree','68':'pineapple','69':'pear','70':'sweet pepper','71':'waterfall','72':'city','73':'bottle','74':'light bulb',
-                '75':'roundabout sign','76':'musicassette','77':'belfry','78':'flag','79':'key','80':'pliers','81':'monument','82':'door','83':'hammer','84':'chair','85':'gun','86':'house',
+                '75':'roundabout sign','76':'music cassette','77':'belfry','78':'flag','79':'key','80':'pliers','81':'monument','82':'door','83':'hammer','84':'chair','85':'gun','86':'house',
                 '87':'dome','88':'umbrella','89':'mobile phone','90':'house','91':'stove','92':'road sign'}
 
 

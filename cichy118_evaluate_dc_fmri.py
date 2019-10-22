@@ -20,6 +20,7 @@ from scipy import stats
 from scipy.spatial.distance import squareform
 import collections
 import re
+from gensim.models import KeyedVectors
 
 ## load activations dictionary 
 def load_dict(path):
@@ -169,7 +170,7 @@ def main(layers, network_used, comparison_with, order_method,training):
     img_synsets_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_img_synsets.pickle'
     img_w2v_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_img_w2v.pickle'
 
-    number = (re.findall('\d+', comparison_with))
+    number = (re.findall(r'\d+', comparison_with))
     fmri_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/'+ number[0]+'_Image_Set/target_fmri.mat'
 
     act = load_dict(act_pth)
@@ -232,8 +233,8 @@ def main(layers, network_used, comparison_with, order_method,training):
                 if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
                     IT_ordered.append(item_IT[1])
                     print item_IT
-        EVC = squareform(np.asarray(EVC),force='tovector', checks=False)
-        IT = squareform(np.asarray(IT),force='tovector', checks=False)
+        EVC = squareform(np.asarray(EVC_ordered), checks=False)
+        IT = squareform(np.asarray(IT_ordered), checks=False)
     
     fmri_rdm_dict = {'EVC_RDMs' : EVC, 'IT_RDMs' : IT}
 
@@ -274,6 +275,16 @@ def main(layers, network_used, comparison_with, order_method,training):
 
 
 if __name__ == '__main__':
+    
+    '''
+    Arguments and possible values:
+    
+    layers: list of layers of the network for which we have activations
+    network_used: DC vs alexnet
+    comparison_with: cichy118 vs niko92
+    order_method: presentation vs lch vs w2v
+    training: pretrained vs untrained
+    '''
 
     layers_dc = ['ReLu1', 'ReLu2', 'ReLu3', 'ReLu4', 'ReLu5']
     main(layers_dc, 'DC' ,'niko92', 'w2v', 'pretrained')
