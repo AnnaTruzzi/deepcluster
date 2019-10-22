@@ -41,25 +41,18 @@ def loadmat(matfile):
     else:
         return {name: np.transpose(f.get(name)) for name in f.keys()}
 
-def lch_order(keys,ordered_names_dict,syn_dict,w2v_dict):
+def lch_order(ordered_names_dict,syn_dict,w2v_dict):
     ## get LCH distance for the images from the respective synsets and order them by hierarchical clustering + get respective (comprehensible) labels 
-    labels_dict = [label.split('/')[-1] for label in keys]
-    synsets_list = []
-    for key in labels_dict:
-        for item in syn_dict.items():
-            if item[0] in key:
-                syn = wn.synset(item[1])
-                #print syn.definition()
-                synsets_list.append(syn)
-
-    cmb = list(combinations(synsets_list,2))
+    cmb = list(combinations(ordered_names_dict.values(),2))
     lch_list = []
     x = []
     y = []
-    for item in cmb:
-        x.append(item[0])
-        y.append(item[1])
-        lch = item[0].lch_similarity(item[1])
+    for combo in cmb:
+        x.append(combo[0])
+        y.append(combo[1])
+        syn1 = wn.synset(syn_dict[ordered_names_dict.keys()[ordered_names_dict.values().index(combo[0])]])
+        syn2 = wn.synset(syn_dict[ordered_names_dict.keys()[ordered_names_dict.values().index(combo[1])]])
+        lch = syn1.lch_similarity(syn2)
         lch_list.append(lch)
 
     x = np.array(x,dtype = str)
@@ -68,16 +61,10 @@ def lch_order(keys,ordered_names_dict,syn_dict,w2v_dict):
     lch_matrix = np.stack((x,y,(1./lch_list)),axis = 1)  ## IMPORTANT: the dendrogram function consideres smallest numbers as index of closeness, lch does the opposite --> 1/lch
     Z = linkage(lch_matrix[:,2], 'ward')  #optimal_ordering = True
 
-    labels_img = []
-    for syn in synsets_list:
-        for item in syn_dict.items():
-            if item[1] == str(syn).split("'")[1]:
-                labels_img.append(ordered_names_dict[item[0]])
-
     plt.figure()
     den = dendrogram(Z,
                 orientation='top',
-                labels=labels_img,
+                labels=ordered_names_dict.values(),
                 leaf_font_size=9,
                 distance_sort='ascending',
                 show_leaf_counts=True)
@@ -86,14 +73,14 @@ def lch_order(keys,ordered_names_dict,syn_dict,w2v_dict):
     return orderedNames
 
 
-def presentation_order(keys,ordered_names_dict,syn_dict,w2v_dict):
+def presentation_order(ordered_names_dict,syn_dict,w2v_dict):
     orderedNames = []
     for item in sorted(ordered_names_dict.items()):
         orderedNames.append(item[1])
     return orderedNames
 
 
-def w2v_order(keys,ordered_names_dict,syn_dict,w2v_dict):
+def w2v_order(ordered_names_dict,syn_dict,w2v_dict):
     orderedNames = []
     model = KeyedVectors.load_word2vec_format('/home/CUSACKLAB/annatruzzi/GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
     w2v = []
@@ -127,24 +114,6 @@ def rdm(act_matrix):
     rdm_matrix = distance.squareform(distance.pdist(act_matrix,metric='correlation'))
     return rdm_matrix
 
-#defines the spearman correlation
-def spearman(model_rdm, rdm):
-    out_values = stats.spearmanr(rdm, model_rdm)[0] 
-    return out_values
-
-#computes spearman correlation (R) and R^2, and ttest for p-value.
-def fmri_rdm(model_rdm, fmri_rdms):
-    corr = spearman(model_rdm, fmri_rdms)
-    corr_squared = np.square(corr)
-    return np.mean(corr_squared), stats.ttest_1samp(corr_squared, 0)[1]
-
-def evaluate(submission, targets, target_names=['EVC_RDMs', 'IT_RDMs']):
-    out = {}
-    for name in target_names:
-        out[name] = fmri_rdm(submission, targets[name])
-    out['score'] = np.mean([x[0] for x in out.values()])
-    return out
-
 
 def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     fig=plt.figure()
@@ -159,12 +128,29 @@ def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     fig.suptitle(main)
     manager = plt.get_current_fig_manager()
     manager.window.showMaximized()
-    plt.show()
+    #plt.show()
     fig.savefig(outname)
     plt.close(fig)
 
 
 def main(layers, network_used, comparison_with, order_method,training):
+    
+    ''' Calcutates the correlation between activations in a neural network and brain activations in early visual cortex (EVC) and IT
+
+    It can be applied to activations in 2 networks, 2 and from two differnt set of images, cichy118 and niko92.
+    also, it is possible to order the items accordingly to lch similarity or word2vec similarity rather than in the presentation order if necessary
+
+    Args:
+        layers: list of layers of the network for which we have activations
+        network_used: choose between DC vs alexnet
+        comparison_with: choose between cichy118 vs niko92
+        order_method: choose between presentation vs lch vs w2v
+        training: choose between pretrained vs untrained
+    
+    Returns:
+        RDMs and correlations between neural network RDMs and fmri RDMs
+    '''
+    
     act_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_activations_'+ training + '.pickle'
     img_names_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_img_names.pickle'
     img_synsets_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/' + comparison_with + '_img_synsets.pickle'
@@ -182,7 +168,7 @@ def main(layers, network_used, comparison_with, order_method,training):
     img_w2v = reorder_od(img_w2v, sorted(img_w2v.keys()))
 
     #############   get list of lch ordered activation keys starting from labels_img and img_names dict
-    order_function = order_method + '_order(act.keys(),img_names,img_synsets,img_w2v)'
+    order_function = order_method + '_order(img_names,img_synsets,img_w2v)'
     orderedNames = eval(order_function)
     orderedKeys = []
     for name in orderedNames:
@@ -230,7 +216,7 @@ def main(layers, network_used, comparison_with, order_method,training):
                     EVC_ordered.append(item_EVC[1])
                     print item_EVC
             for item_IT in cmb_mri_IT:
-                if (item_EVC[0][0] == combination[0] and item_EVC[0][1] == combination[1]) or (item_EVC[0][0] == combination[1] and item_EVC[0][1] == combination[0]):
+                if (item_IT[0][0] == combination[0] and item_IT[0][1] == combination[1]) or (item_IT[0][0] == combination[1] and item_IT[0][1] == combination[0]):
                     IT_ordered.append(item_IT[1])
                     print item_IT
         EVC = squareform(np.asarray(EVC_ordered), checks=False)
@@ -241,34 +227,24 @@ def main(layers, network_used, comparison_with, order_method,training):
     
     ######### evaluate dc vs fmri
     out_file_name = '_'.join([network_used, comparison_with, order_method])
-    with open('correaltion_' + out_file_name + '.txt', 'w') as f:
+    with open('correlation_' + out_file_name + '_' + training + '.txt', 'w') as f:
         for layer in range(0,len(layers)):
-            out = evaluate(dc_rdm[layer], fmri_rdm_dict)
-            print('=' * 20)
-            print('dc%s_fMRI results:' %str(layer+1))
-            print('Squared correlation of model to EVC (R**2): {}'.format(out['EVC_RDMs'][0]), '  and significance: {}'.format(out['EVC_RDMs'][1]))
-            print('Squared correlation of model to IT (R**2): {}'.format(out['IT_RDMs'][0]), '  and significance: {}'.format(out['IT_RDMs'][1]))
-            print('SCORE (average of the two correlations): {}'.format(out['score'])) 
+            EVC_corr,EVC_pvalue = stats.spearmanr(squareform(dc_rdm[layer],force='tovector',checks=False), squareform(fmri_rdm_dict['EVC_RDMs'],force='tovector',checks=False))
+            IT_corr,IT_pvalue = stats.spearmanr(squareform(dc_rdm[layer],force='tovector',checks=False), squareform(fmri_rdm_dict['IT_RDMs'],force='tovector',checks=False))
             f.write('=' * 20 + '\n')
             f.write('dc%s_fMRI results:' %str(layer+1) + '\n')
-            f.write('Squared correlation of model to EVC (R**2): {}'.format(out['EVC_RDMs'][0]) + '\n')
-            f.write('Squared correlation of model to IT (R**2): {}'.format(out['IT_RDMs'][0]) + '\n')
-            f.write('SCORE (average of the two correlations): {}'.format(out['score']) + '\n') 
+            f.write('Spearman correlation of model to EVC: {}'.format(EVC_corr) + ' and p value:{}'.format(EVC_pvalue) + '\n')
+            f.write('Squared correlation of model to IT: {}'.format(IT_corr) + ' and p value:{}'.format(IT_pvalue) + '\n')
 
-        #evc_percentNC = ((out['EVC_RDMs'][0])/nc118_EVC_R2)*100.      #evc percent of noise ceiling
-        #it_percentNC = ((out['IT_RDMs'][0])/nc118_IT_R2)*100.         #it percent of noise ceiling
-        #score_percentNC = ((out['score'])/nc118_avg_R2)*100.      #avg (score) percent of noise ceiling
- 
 
     ####### DC plots
     for i,layer in enumerate(layers):
         main = network_used + ' layer '+str(layer)
-        outname = 'rdm_' + out_file_name + '_' + layer
+        outname = 'rdm_' + out_file_name + '_' + layer + '_' + training
         rdm_plot(dc_rdm[i], vmin = 0, vmax = 1, labels = orderedNames, main = main, outname = outname + '.png')
     
 
     ####### fmri plots
-
     rdm_plot(fmri_rdm_dict['EVC_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC_' + out_file_name + '.png')
     rdm_plot(fmri_rdm_dict['IT_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT_' + out_file_name + '.png')
 
@@ -276,16 +252,6 @@ def main(layers, network_used, comparison_with, order_method,training):
 
 if __name__ == '__main__':
     
-    '''
-    Arguments and possible values:
-    
-    layers: list of layers of the network for which we have activations
-    network_used: DC vs alexnet
-    comparison_with: cichy118 vs niko92
-    order_method: presentation vs lch vs w2v
-    training: pretrained vs untrained
-    '''
-
     layers_dc = ['ReLu1', 'ReLu2', 'ReLu3', 'ReLu4', 'ReLu5']
-    main(layers_dc, 'DC' ,'niko92', 'w2v', 'pretrained')
+    main(layers_dc, 'DC' ,'niko92', 'presentation', 'pretrained')
 

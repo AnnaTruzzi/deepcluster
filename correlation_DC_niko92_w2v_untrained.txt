@@ -1,0 +1,20 @@
+====================
+dc1_fMRI results:
+Spearman correlation of model to EVC: 0.250907032052 and p value:4.10745009633e-61
+Squared correlation of model to IT: 0.246933101876 and p value:3.44062826405e-59
+====================
+dc2_fMRI results:
+Spearman correlation of model to EVC: 0.478567669675 and p value:1.24954222283e-238
+Squared correlation of model to IT: 0.380813622617 and p value:1.4544609469e-144
+====================
+dc3_fMRI results:
+Spearman correlation of model to EVC: 0.401059857727 and p value:1.44838107446e-161
+Squared correlation of model to IT: 0.356878264022 and p value:5.79124426351e-126
+====================
+dc4_fMRI results:
+Spearman correlation of model to EVC: 0.413670496839 and p value:9.0140841894e-173
+Squared correlation of model to IT: 0.372209331863 and p value:1.07591366599e-137
+====================
+dc5_fMRI results:
+Spearman correlation of model to EVC: 0.420047736721 and p value:1.2637976767e-178
+Squared correlation of model to IT: 0.373267289784 and p value:1.57898836783e-138
