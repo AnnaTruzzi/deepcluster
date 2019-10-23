@@ -128,7 +128,7 @@ def rdm_plot(rdm, vmin, vmax, labels, main, outname):
     fig.suptitle(main)
     manager = plt.get_current_fig_manager()
     manager.window.showMaximized()
-    #plt.show()
+    plt.show()
     fig.savefig(outname)
     plt.close(fig)
 

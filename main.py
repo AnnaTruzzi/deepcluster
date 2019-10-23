@@ -132,7 +132,7 @@ def main():
     dataset = datasets.ImageFolder(args.data, transform=transforms.Compose(tra))
     if args.verbose: print('Load dataset: {0:.2f} s'.format(time.time() - end))
     dataloader = torch.utils.data.DataLoader(datasemodel.features = torch.nn.DataParallel(model.features)
-                                             batch_model.features = torch.nn.DataParallel(model.features)batch,
+                                             batch_model.features = torch.nn.DataParallel(model.features).batch,
                                              num_womodel.features = torch.nn.DataParallel(model.features).workers,
                                              pin_memodel.features = torch.nn.DataParallel(model.features)
 

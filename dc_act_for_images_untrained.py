@@ -124,11 +124,17 @@ def get_activations(offset):
 if __name__ == '__main__':
     global args
     args = parser.parse_args()
-    model = models.alexnet(sobel=True, bn=True, out=10000) 
+    #model = models.alexnet(sobel=True, bn=True, out=10000) 
+    #model.cuda()
+
+    model = models.__dict__[args.arch](sobel=args.sobel)
+    fd = int(model.top_layer.weight.size()[1])
+    model.top_layer = None
+    model.features = torch.nn.DataParallel(model.features)
     model.cuda()
-    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/118_Image_Set/118images' 
+    image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/92_Image_Set/92images' 
     act = get_activations(image_pth)
 
-    with open('/home/CUSACKLAB/annatruzzi/cichy2016/cichy118_activations_untrained.pickle', 'wb') as handle:
+    with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations_untrained.pickle', 'wb') as handle:
         pickle.dump(act, handle)
 
