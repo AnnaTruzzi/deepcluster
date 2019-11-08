@@ -129,6 +129,6 @@ if __name__ == '__main__':
     image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/92_Image_Set/92images' 
     act = get_activations(image_pth)
 
-    with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations_untrained.pickle', 'wb') as handle:
+    with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations_untrained_DC.pickle', 'wb') as handle:
         pickle.dump(act, handle)
 
