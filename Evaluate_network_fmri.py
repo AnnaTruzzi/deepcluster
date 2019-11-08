@@ -21,6 +21,8 @@ from scipy.spatial.distance import squareform
 import collections
 import re
 from gensim.models import KeyedVectors
+import skbio
+
 
 ## load activations dictionary 
 def load_dict(path):
@@ -226,11 +228,13 @@ def main(layers, network_used, comparison_with, order_method,training):
 
     
     ######### evaluate dc vs fmri
-    out_file_name = '_'.join([network_used, comparison_with, order_method])
-    with open('correlation_' + out_file_name + '_' + training + '.txt', 'w') as f:
+    out_file_name = '_'.join([network_used, comparison_with])
+    with open('correlation_' + out_file_name + '_' + training + '_mantel.txt', 'w') as f:
         for layer in range(0,len(layers)):
-            EVC_corr,EVC_pvalue = stats.spearmanr(squareform(dc_rdm[layer],force='tovector',checks=False), squareform(fmri_rdm_dict['EVC_RDMs'],force='tovector',checks=False))
-            IT_corr,IT_pvalue = stats.spearmanr(squareform(dc_rdm[layer],force='tovector',checks=False), squareform(fmri_rdm_dict['IT_RDMs'],force='tovector',checks=False))
+            #EVC_corr,EVC_pvalue = stats.spearmanr(squareform(dc_rdm[layer],force='tovector',checks=False), squareform(fmri_rdm_dict['EVC_RDMs'],force='tovector',checks=False))
+            #IT_corr,IT_pvalue = stats.spearmanr(squareform(dc_rdm[layer],force='tovector',checks=False), squareform(fmri_rdm_dict['IT_RDMs'],force='tovector',checks=False))
+            EVC_corr,EVC_pvalue = skbio.math.stats.distance.mantel(dc_rdm[layer],fmri_rdm_dict['EVC_RDMs'], method = 'spearman', permutations = 10000)
+            IT_corr,IT_pvalue = skbio.math.stats.distance.mantel(dc_rdm[layer],fmri_rdm_dict['IT_RDMs'], method = 'spearman', permutations = 10000)
             f.write('=' * 20 + '\n')
             f.write('dc%s_fMRI results:' %str(layer+1) + '\n')
             f.write('Spearman correlation of model to EVC: {}'.format(EVC_corr) + ' and p value:{}'.format(EVC_pvalue) + '\n')
@@ -240,13 +244,13 @@ def main(layers, network_used, comparison_with, order_method,training):
     ####### DC plots
     for i,layer in enumerate(layers):
         main = network_used + ' layer '+str(layer)
-        outname = 'rdm_' + out_file_name + '_' + layer + '_' + training
+        outname = '_'.join(['rdm',out_file_name, order_method,layer, training])
         rdm_plot(dc_rdm[i], vmin = 0, vmax = 1, labels = orderedNames, main = main, outname = outname + '.png')
     
 
     ####### fmri plots
-    rdm_plot(fmri_rdm_dict['EVC_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = 'rdm_EVC_' + out_file_name + '.png')
-    rdm_plot(fmri_rdm_dict['IT_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = 'rdm_IT_' + out_file_name + '.png')
+    rdm_plot(fmri_rdm_dict['EVC_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'EVC', outname = '_'.join(['rdm_EVC',out_file_name,order_method]) + '.png')
+    rdm_plot(fmri_rdm_dict['IT_RDMs'], vmin = 0, vmax = 0.8, labels = orderedNames, main = 'IT', outname = '_'.join(['rdm_IT',out_file_name,order_method]) + '.png')
 
 
 
