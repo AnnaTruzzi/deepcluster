@@ -92,6 +92,10 @@ def compute_features(dataloader, model, N):
         if isinstance(m, nn.ReLU):
             m.register_forward_hook(_store_feats)
 
+    for m in model.classifier.modules():
+        if isinstance(m, nn.ReLU):
+            m.register_forward_hook(_store_feats)
+
     for i, input_tensor in enumerate(dataloader):
         with torch.no_grad():
             input_var, label = input_tensor[0].cuda(),input_tensor[2]

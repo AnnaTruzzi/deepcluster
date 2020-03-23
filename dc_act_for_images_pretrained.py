@@ -76,8 +76,7 @@ class ImageFolderWithPaths(datasets.ImageFolder):
 
 
 def compute_features(dataloader, model, N):
-    if args.verbose:
-        print('Compute features')
+    print('Compute features')
     batch_time = AverageMeter()
     end = time.time()
     model.eval()
@@ -89,6 +88,10 @@ def compute_features(dataloader, model, N):
         _model_feats.append(output.cpu().numpy())
 
     for m in model.features.modules():
+        if isinstance(m, nn.ReLU):
+            m.register_forward_hook(_store_feats)
+
+    for m in model.classifier.modules():
         if isinstance(m, nn.ReLU):
             m.register_forward_hook(_store_feats)
 
@@ -114,7 +117,7 @@ def get_activations(offset):
     dataset = ImageFolderWithPaths(offset, transform=transforms.Compose(tra))
     dataloader = torch.utils.data.DataLoader(dataset,
                                             batch_size=1,
-                                            num_workers=args.workers,
+                                            num_workers=0,
                                             pin_memory=True,
                                             shuffle = False)
     features = compute_features(dataloader, model, len(dataset))
@@ -122,10 +125,10 @@ def get_activations(offset):
 
 
 if __name__ == '__main__':
-    global args
-    args = parser.parse_args()
+#    global args
+#    args = parser.parse_args()
     modelpth = '/home/CUSACKLAB/annatruzzi/deepcluster_models/alexnet/'
-    checkpoint = torch.load(modelpth+'checkpoint.pth.tar')['state_dict']
+    checkpoint = torch.load(modelpth+'checkpoint_dc.pth.tar')['state_dict']
     checkpoint_new = OrderedDict()
     for k, v in checkpoint.items():
         name = k.replace(".module", '') # remove 'module.' of dataparallel
@@ -137,6 +140,5 @@ if __name__ == '__main__':
     image_pth = '/home/CUSACKLAB/annatruzzi/cichy2016/algonautsChallenge2019/Training_Data/92_Image_Set/92images' 
     act = get_activations(image_pth)
 
-    with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations_pretrained_dc.pickle', 'wb') as handle:
+    with open('/home/CUSACKLAB/annatruzzi/cichy2016/niko92_activations_pretrained_DC.pickle', 'wb') as handle:
         pickle.dump(act, handle)
-
