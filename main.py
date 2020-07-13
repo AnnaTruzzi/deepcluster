@@ -83,6 +83,14 @@ def main():
     model.cuda()
     cudnn.benchmark = True
 
+    # save running checkpoint
+    if not args.resume:
+       torch.save({'epoch': epoch,
+                   'arch': args.arch,
+                   'state_dict': model.state_dict(),
+                   'optimizer' : optimizer.state_dict()},
+                   os.path.join(args.exp, 'checkpoint_dc_randomstate.pth.tar'))
+
     # create optimizer
     optimizer = torch.optim.SGD(
         filter(lambda x: x.requires_grad, model.parameters()),
@@ -111,10 +119,10 @@ def main():
         else:
             print("=> no checkpoint found at '{}'".format(args.resume))
 
-    # creating checkpoint repo
+    '''# creating checkpoint repo
     exp_check = os.path.join(args.exp, 'checkpoints')
     if not os.path.isdir(exp_check):
-        os.makedirs(exp_check)
+        os.makedirs(exp_check)'''
 
     # creating cluster assignments log
     cluster_log = Logger(os.path.join(args.exp, 'clusters'))
@@ -148,8 +156,8 @@ def main():
         model.classifier = nn.Sequential(*list(model.classifier.children())[:-1])
 
         # get the features for the whole dataset
-        features = compute_features(dataloader, model, 1024) # RC 2019-07-22 Just a few images for testing
-#        features = compute_features(dataloader, model, len(dataset))
+#        features = compute_features(dataloader, model, 1024) # RC 2019-07-22 Just a few images for testing
+        features = compute_features(dataloader, model, len(dataset))
 
         # cluster the features
         clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
