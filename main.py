@@ -85,7 +85,7 @@ def main():
 
     # save running checkpoint
     if not args.resume:
-       torch.save({'epoch': epoch,
+       torch.save({'epoch': 'randomstate',
                    'arch': args.arch,
                    'state_dict': model.state_dict(),
                    'optimizer' : optimizer.state_dict()},
@@ -139,11 +139,10 @@ def main():
     end = time.time()
     dataset = datasets.ImageFolder(args.data, transform=transforms.Compose(tra))
     if args.verbose: print('Load dataset: {0:.2f} s'.format(time.time() - end))
-    dataloader = torch.utils.data.DataLoader(datasemodel.features = torch.nn.DataParallel(model.features)
-                                             batch_model.features = torch.nn.DataParallel(model.features).batch,
-                                             num_womodel.features = torch.nn.DataParallel(model.features).workers,
-                                             pin_memodel.features = torch.nn.DataParallel(model.features)
-
+    dataloader = torch.utils.data.DataLoader(dataset,
+                                             batch_size=args.batch,
+                                             num_workers=args.workers,
+                                             pin_memory=True)
     # clustering algorithm to use
     deepcluster = clustering.__dict__[args.clustering](args.nmb_cluster)
 
