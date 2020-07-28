@@ -62,6 +62,7 @@ parser.add_argument('--checkpoints', type=int, default=25000,
 parser.add_argument('--seed', type=int, default=31, help='random seed (default: 31)')
 parser.add_argument('--exp', type=str, default='', help='path to exp folder')
 parser.add_argument('--verbose', action='store_true', help='chatty')
+parser.add_argument('--instantiation', type=int, default=0, help='number of instantiation if initialized several times to account for network variability (default: 31)')
 
 
 def main():
@@ -83,13 +84,12 @@ def main():
     model.cuda()
     cudnn.benchmark = True
 
-    # save running checkpoint
+    # save checkpoint for the initial random state
     if not args.resume:
        torch.save({'epoch': 'randomstate',
                    'arch': args.arch,
-                   'state_dict': model.state_dict(),
-                   'optimizer' : optimizer.state_dict()},
-                   os.path.join(args.exp, 'checkpoint_dc_randomstate.pth.tar'))
+                   'state_dict': model.state_dict()},
+                   os.path.join(args.exp, 'checkpoint_dc'+str(args.instantiation)+'_randomstate.pth.tar'))
 
     # create optimizer
     optimizer = torch.optim.SGD(
@@ -119,10 +119,10 @@ def main():
         else:
             print("=> no checkpoint found at '{}'".format(args.resume))
 
-    '''# creating checkpoint repo
-    exp_check = os.path.join(args.exp, 'checkpoints')
-    if not os.path.isdir(exp_check):
-        os.makedirs(exp_check)'''
+    # creating checkpoint repo
+    #exp_check = os.path.join(args.exp, 'checkpoints')
+    #if not os.path.isdir(exp_check):
+    #    os.makedirs(exp_check)
 
     # creating cluster assignments log
     cluster_log = Logger(os.path.join(args.exp, 'clusters'))
@@ -207,11 +207,12 @@ def main():
                 pass
             print('####################### \n')
         # save running checkpoint
+	inst_number = args.instantiation
         torch.save({'epoch': epoch + 1,
                     'arch': args.arch,
                     'state_dict': model.state_dict(),
                     'optimizer' : optimizer.state_dict()},
-                   os.path.join(args.exp, 'checkpoint.pth.tar'))
+                    os.path.join(args.exp, 'checkpoint_dc'+str(inst_number)+'_epoch'+str(epoch)+'.pth.tar'))
 
         # save cluster assignments
         cluster_log.log(deepcluster.images_lists)
@@ -248,21 +249,20 @@ def train(loader, model, crit, opt, epoch):
         data_time.update(time.time() - end)
 
         # save checkpoint
-        n = len(loader) * epoch + i
-        if n % args.checkpoints == 0:
-            path = os.path.join(
-                args.exp,
-                'checkpoints',
-                'checkpoint_' + str(n / args.checkpoints) + '.pth.tar',
-            )
-            if args.verbose:
-                print('Save checkpoint at: {0}'.format(path))
-            torch.save({
-                'epoch': epoch + 1,
-                'arch': args.arch,
-                'state_dict': model.state_dict(),
-                'optimizer' : opt.state_dict()
-            }, path)
+        #n = len(loader) * epoch + i
+        #if n % args.checkpoints == 0:
+        #    path = os.path.join(
+        #        args.exp,
+        #        'checkpoint_' + str(n / args.checkpoints) + '.pth.tar',
+        #    )
+        #    if args.verbose:
+        #        print('Save checkpoint at: {0}'.format(path))
+        #    torch.save({
+        #        'epoch': epoch + 1,
+        #        'arch': args.arch,
+        #        'state_dict': model.state_dict(),
+        #        'optimizer' : opt.state_dict()
+        #    }, path)
 
         target = target.cuda(async=True)
         input_var = torch.autograd.Variable(input_tensor.cuda())

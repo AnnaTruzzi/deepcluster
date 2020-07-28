@@ -13,15 +13,23 @@ WD=-5
 K=10000
 K=10
 WORKERS=12
-EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/"
 PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 CHECKPOINTS=5005
+RESUME="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_135.pth.tar"
 
-for i in {1..15}
+for i in {1}
 do
-   EXP= echo "/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_$i"
+   EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_$i"
    mkdir -p ${EXP}
-   CUDA_VISIBLE_DEVICES=0 ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
-     --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}
+   if ${i} == 1
+   then
+      ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
+      --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
+      --instantiation ${i} --checkpoints ${CHECKPOINTS} --resume ${RESUME}
+   else
+      ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
+      --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
+      --instantiation ${i} --checkpoints ${CHECKPOINTS}
+   fi
    echo "Started training for instantiation number $i"
 done
