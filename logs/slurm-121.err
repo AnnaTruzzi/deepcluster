@@ -1,0 +1,10 @@
+/var/spool/slurm/d/job00121/slurm_script: line 24: {1}: command not found
+usage: main.py [-h] [--arch ARCH] [--sobel] [--clustering {Kmeans,PIC}]
+               [--nmb_cluster NMB_CLUSTER] [--lr LR] [--wd WD]
+               [--reassign REASSIGN] [--workers WORKERS] [--epochs EPOCHS]
+               [--start_epoch START_EPOCH] [--batch BATCH]
+               [--momentum MOMENTUM] [--resume PATH]
+               [--checkpoints CHECKPOINTS] [--seed SEED] [--exp EXP]
+               [--verbose] [--instantiation INSTANTIATION]
+               DIR
+main.py: error: argument --instantiation: invalid int value: '{1}'

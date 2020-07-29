@@ -17,19 +17,12 @@ PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 CHECKPOINTS=5005
 RESUME="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_135.pth.tar"
 
-for i in {1}
+for i in 1
 do
    EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_$i"
    mkdir -p ${EXP}
-   if ${i} == 1
-   then
-      ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
-      --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
-      --instantiation ${i} --checkpoints ${CHECKPOINTS} --resume ${RESUME}
-   else
-      ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
-      --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
-      --instantiation ${i} --checkpoints ${CHECKPOINTS}
-   fi
+   ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
+   --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
+   --instantiation ${i} --checkpoints ${CHECKPOINTS} --resume ${RESUME}
    echo "Started training for instantiation number $i"
 done
