@@ -1,0 +1,5 @@
+Architecture: alexnet
+=> loading checkpoint '/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch135.pth.tar'
+=> loaded checkpoint '/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch135.pth.tar' (epoch 136)
+Load dataset: 4.96 s
+Compute features
