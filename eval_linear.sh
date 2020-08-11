@@ -6,14 +6,14 @@
 #
 #!/bin/bash
 
-DATA="/datasets01/imagenet_full_size/061417/"
-MODELROOT="${HOME}/deepcluster_models"
-MODEL="${MODELROOT}/alexnet/checkpoint.pth.tar"
-EXP="${HOME}/deepcluster_exp/linear_classif"
+DATA="/data/ILSVRC2012/deepcluster_eval"
+#MODELROOT="${HOME}/deepcluster/models"
+MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch199.pth.tar"
+EXP="/home/annatruzzi/deepcluster_eval"
 
-PYTHON="${HOME}/test/conda/bin/python"
+PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 
 mkdir -p ${EXP}
 
-${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --conv 3 --lr 0.01 \
+${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --conv 5 --lr 0.01 \
   --wd -7 --tencrops --verbose --exp ${EXP} --workers 12
