@@ -6,7 +6,7 @@
 #
 #!/bin/bash
 
-DATA="/data/ILSVRC2012/deepcluster_eval"
+DATA="/data/ILSVRC2012"
 #MODELROOT="${HOME}/deepcluster/models"
 MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch199.pth.tar"
 EXP="/home/annatruzzi/deepcluster_eval"
