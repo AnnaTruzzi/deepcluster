@@ -8,8 +8,9 @@
 
 DATA="/data/ILSVRC2012"
 #MODELROOT="${HOME}/deepcluster/models"
-MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch199.pth.tar"
-EXP="/home/annatruzzi/deepcluster_eval"
+#MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch199.pth.tar"
+MODEL="/home/annatruzzi/deepcluster_models/alexnet/checkpoint_dc.pth.tar"
+EXP="/home/annatruzzi/deepcluster_eval/original"
 
 PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 
