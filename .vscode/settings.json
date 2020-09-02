@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/CUSACKLAB/annatruzzi/anaconda3/envs/pytorch_p27/bin/python",
+    "python.pythonPath": "/usr/bin/python",
     "python.terminal.launchArgs": [
         "/home/CUSACKLAB/annatruzzi/imagenet_sample",
         "--exp",
