@@ -1,0 +1,7 @@
+=> loading checkpoint '/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch420.pth.tar'
+Loaded
+Epoch: [0][0/5005]	Time 3.968 (3.968)	Data 3.186 (3.186)	Loss 6.9061 (6.9061)	Prec@1 0.000 (0.000)	Prec@5 0.781 (0.781)
+Epoch: [0][100/5005]	Time 0.045 (0.207)	Data 0.000 (0.155)	Loss 6.8955 (6.9022)	Prec@1 0.781 (0.317)	Prec@5 1.562 (1.153)
+Epoch: [0][200/5005]	Time 0.050 (0.194)	Data 0.000 (0.145)	Loss 6.8842 (6.8956)	Prec@1 0.781 (0.618)	Prec@5 5.469 (2.167)
+Epoch: [0][300/5005]	Time 1.441 (0.190)	Data 1.397 (0.141)	Loss 6.8643 (6.8890)	Prec@1 1.172 (0.869)	Prec@5 6.641 (3.016)
+Epoch: [0][400/5005]	Time 0.045 (0.185)	Data 0.000 (0.137)	Loss 6.8635 (6.8824)	Prec@1 1.562 (1.044)	Prec@5 3.516 (3.569)

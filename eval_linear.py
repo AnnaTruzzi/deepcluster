@@ -243,7 +243,7 @@ def train(train_loader, model, reglog, criterion, optimizer, epoch):
         loss = criterion(output, target_var)
         # measure accuracy and record loss
         prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
-        losses.update(loss.data[0], input.size(0))
+        losses.update(loss.item(), input.size(0))
         top1.update(prec1[0], input.size(0))
         top5.update(prec5[0], input.size(0))
 
@@ -298,7 +298,7 @@ def validate(val_loader, model, reglog, criterion):
         top1.update(prec1[0], input_tensor.size(0))
         top5.update(prec5[0], input_tensor.size(0))
         loss = criterion(output_central, target_var)
-        losses.update(loss.data[0], input_tensor.size(0))
+        losses.update(loss.item(), input_tensor.size(0))
 
         # measure elapsed time
         batch_time.update(time.time() - end)

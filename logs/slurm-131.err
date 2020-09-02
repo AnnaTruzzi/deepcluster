@@ -1,0 +1,1540 @@
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/torch/nn/parallel/data_parallel.py:26: UserWarning: 
+    There is an imbalance between your GPUs. You may want to exclude GPU 3 which
+    has less than 75% of the memory or cores of GPU 0. You can do so by setting
+    the device_ids argument to DataParallel, or by setting the CUDA_VISIBLE_DEVICES
+    environment variable.
+  warnings.warn(imbalance_warn.format(device_ids[min_pos], device_ids[max_pos]))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/sklearn/metrics/cluster/supervised.py:844: FutureWarning: The behavior of NMI will change in version 0.22. To match the behavior of 'v_measure_score', NMI will use average_method='arithmetic' by default.
+  FutureWarning)
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 19660800 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 18481152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 37093376 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 39976960 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 34865152 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:764: UserWarning: Corrupt EXIF data.  Expecting to read 12 bytes but only got 10. 
+  warnings.warn(str(msg))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 1835008 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
+/var/spool/slurm/d/job00131/slurm_script: line 21: 13691 Killed                  ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS} --instantiation ${i} --checkpoints ${CHECKPOINTS} --resume ${RESUME} --epochs ${EPOCHS}
+slurmstepd: error: Detected 19 oom-kill event(s) in step 131.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

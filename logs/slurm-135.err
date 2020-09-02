@@ -1,0 +1,2 @@
+/opt/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:747: UserWarning: Possibly corrupt EXIF data.  Expecting to read 2555904 bytes but only got 0. Skipping tag 0
+  " Skipping tag %s" % (size, len(data), tag))
