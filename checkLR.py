@@ -19,8 +19,10 @@ import torchvision.datasets as datasets
 import datetime
 
 def main():
-    checkpoint = torch.load(checkpth+'checkpoint_dc1_epoch281.pth.tar')
+    checkpoint = torch.load(checkpth+'checkpoint_dc1_epoch420.pth.tar')
     print(checkpoint['optimizer'])
+    with open('/home/annatruzzi/deepcluster/checkpoint_optimizer.txt','w') as f:
+         f.write(str(checkpoint['optimizer']))
 
 if __name__ == '__main__':
 #    global args
