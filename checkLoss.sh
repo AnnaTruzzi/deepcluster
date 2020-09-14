@@ -14,6 +14,6 @@ for (( i=0; i<421; i+=10 )); do
     MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch${i}.pth.tar"
     EXP="/home/annatruzzi/deepcluster_eval/dc_1/checkpoint${i}"
     mkdir -p ${EXP}
-    ${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --epochs 10 \ 
-        --conv 5 --lr 0.01 --wd -7 --tencrops --verbose --exp ${EXP} --workers 18 
+    ${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --epochs 10 --conv 5\ 
+    --lr 0.01 --wd -7 --tencrops --verbose --exp ${EXP} --workers 18 
 done
