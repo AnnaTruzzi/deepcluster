@@ -127,6 +127,7 @@ def main():
     loss_log = Logger(os.path.join(exp_log, 'loss_log'))
     prec1_log = Logger(os.path.join(exp_log, 'prec1'))
     prec5_log = Logger(os.path.join(exp_log, 'prec5'))
+    print('Succeccful logger creation')
 
     for epoch in range(args.epochs):
         end = time.time()
