@@ -1,8 +1,25 @@
 import pickle
 import numpy as np
+import matplotlib.pyplot as plt
+import glob
+import os
 
-pth = '/home/annatruzzi/deepcluster_eval/dc_1/log/loss_log'
-with open (pth,'rb') as f:
-    data = pickle.load(f)
-    print(data)
+def main():
+    loss_list = []
+    for directory in glob.glob(pth):
+        print(directory)
+        filename = os.path.join(directory,'log/loss_log')
+        print(filename)
+        with open (filename,'rb') as f:
+            data = pickle.load(f)
+            loss_list.append(data[-1])
+            print(data.shape)
+    plt.plot(loss_list)
+    plt.savefig('LossPlot_dc1.png',bbox_inches='tight')
+    plt.close()
+
+
  
+if __name__ == '__main__':
+    pth = '/home/annatruzzi/deepcluster_eval/dc_1/'
+    main()
