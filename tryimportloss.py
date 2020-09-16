@@ -10,10 +10,13 @@ def main(pth):
         print(directory)
         filename = os.path.join(directory,'log/loss_log')
         print(filename)
-        with open (filename,'rb') as f:
-            data = pickle.load(f)
-            loss_list.append(data[-1])
-            print(len(data))
+        try:
+            with open (filename,'rb') as f:
+                data = pickle.load(f)
+                loss_list.append(data[-1])
+                print(len(data))
+        except:
+            continue
     plt.plot(loss_list)
     plt.savefig('LossPlot_dc1.png',bbox_inches='tight')
     plt.close()
