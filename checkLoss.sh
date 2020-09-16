@@ -15,6 +15,6 @@ for (( i=0; i<421; i+=10 )); do
     EXP="/home/annatruzzi/deepcluster_eval/dc_1/checkpoint${i}"
     mkdir -p ${EXP}
     echo ${EXP}
-    ${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --epochs 10 --conv 5\ 
-    --lr 0.01 --wd -7 --tencrops --verbose --exp ${EXP} --workers 24 
+    ${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --epochs 10 --conv 5 --lr 0.01 \
+     --wd -7 --tencrops --verbose --exp ${EXP} --workers 24 
 done

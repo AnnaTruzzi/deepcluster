@@ -123,11 +123,12 @@ def main():
     exp_log = os.path.join(args.exp, 'log')
     if not os.path.isdir(exp_log):
         os.makedirs(exp_log)
-
+    print(args.exp)
+    print(exp_log)
     loss_log = Logger(os.path.join(exp_log, 'loss_log'))
     prec1_log = Logger(os.path.join(exp_log, 'prec1'))
     prec5_log = Logger(os.path.join(exp_log, 'prec5'))
-    print('Succeccful logger creation')
+    print('Successful logger creation')
 
     for epoch in range(args.epochs):
         end = time.time()
