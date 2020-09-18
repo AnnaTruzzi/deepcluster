@@ -20,7 +20,8 @@
                 "--k","10",
                 "--sobel",
                 "--verbose",
-                "--workers","0"
+                "--workers","0",
+                "--resume","/home/CUSACKLAB/annatruzzi/DeepCluster_output/checkpoints/checkpoint_0.pth.tar"
             ],
             "env": {"CUDA_VISIBLE_DEVICES":0}
         },

@@ -1,7 +1,0 @@
-Architecture: alexnet
-=> loading checkpoint '/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch199.pth.tar'
-=> loaded checkpoint '/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch199.pth.tar' (epoch 200)
-Load dataset: 10.84 s
-2020-08-24 09:59:47.002259
-2020-08-24 10:00:01.270085
-Started training for instantiation number 1

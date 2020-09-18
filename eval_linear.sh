@@ -1,20 +1,19 @@
+# Copyright (c) 2017-present, Facebook, Inc.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+#
 #!/bin/bash
-#SBATCH --gres=gpu:3
-#SBATCH --cpus-per-task=18
-#SBATCH -J test_dc_1
-#SBATCH --output=/home/annatruzzi/deepcluster/logs/slurm-%j.out
-#SBATCH --error=/home/annatruzzi/deepcluster/logs/slurm-%j.err
 
+DATA="/datasets01/imagenet_full_size/061417/"
+MODELROOT="${HOME}/deepcluster_models"
+MODEL="${MODELROOT}/alexnet/checkpoint.pth.tar"
+EXP="${HOME}/deepcluster_exp/linear_classif"
 
-DATA="/data/ILSVRC2012"
-#MODELROOT="${HOME}/deepcluster/models"
-MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_1/checkpoint_dc1_epoch420.pth.tar"
-#MODEL="/home/annatruzzi/deepcluster_models/alexnet/checkpoint_dc.pth.tar"
-EXP="/home/annatruzzi/deepcluster_eval/original"
-
-PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
+PYTHON="${HOME}/test/conda/bin/python"
 
 mkdir -p ${EXP}
 
-${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --conv 5 --lr 0.01 \
+${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --conv 3 --lr 0.01 \
   --wd -7 --tencrops --verbose --exp ${EXP} --workers 12

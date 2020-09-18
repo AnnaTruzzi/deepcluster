@@ -68,7 +68,7 @@ def main():
 
     # data loading code
     traindir = os.path.join(args.data, 'train')
-    valdir = os.path.join(args.data, 'val_in_folders')
+    valdir = os.path.join(args.data, 'val')
 
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])
@@ -123,12 +123,10 @@ def main():
     exp_log = os.path.join(args.exp, 'log')
     if not os.path.isdir(exp_log):
         os.makedirs(exp_log)
-    print(args.exp)
-    print(exp_log)
+
     loss_log = Logger(os.path.join(exp_log, 'loss_log'))
     prec1_log = Logger(os.path.join(exp_log, 'prec1'))
     prec5_log = Logger(os.path.join(exp_log, 'prec5'))
-    print('Successful logger creation')
 
     for epoch in range(args.epochs):
         end = time.time()
@@ -245,7 +243,7 @@ def train(train_loader, model, reglog, criterion, optimizer, epoch):
         loss = criterion(output, target_var)
         # measure accuracy and record loss
         prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
-        losses.update(loss.item(), input.size(0))
+        losses.update(loss.data[0], input.size(0))
         top1.update(prec1[0], input.size(0))
         top5.update(prec5[0], input.size(0))
 
@@ -300,7 +298,7 @@ def validate(val_loader, model, reglog, criterion):
         top1.update(prec1[0], input_tensor.size(0))
         top5.update(prec5[0], input_tensor.size(0))
         loss = criterion(output_central, target_var)
-        losses.update(loss.item(), input_tensor.size(0))
+        losses.update(loss.data[0], input_tensor.size(0))
 
         # measure elapsed time
         batch_time.update(time.time() - end)
