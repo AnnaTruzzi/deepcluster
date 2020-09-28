@@ -17,11 +17,14 @@ PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 CHECKPOINTS=5005
 #RESUME="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_2/checkpoint_dc2_epoch388.pth.tar"
 EPOCHS=50
-EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_2"
-SEED=42
 
-mkdir -p ${EXP}
-${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
+for i in 1
+do
+   EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_$i"
+   mkdir -p ${EXP}
+   ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
    --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
-   --checkpoints ${CHECKPOINTS} --epochs ${EPOCHS} --seed ${SEED}
-
+   --instantiation ${i} --checkpoints ${CHECKPOINTS} --resume ${RESUME}\
+   --epochs ${EPOCHS} --seed{$RANDOM}
+   echo "Started training for instantiation number $i"
+done

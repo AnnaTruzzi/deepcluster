@@ -62,6 +62,7 @@ parser.add_argument('--checkpoints', type=int, default=25000,
 parser.add_argument('--seed', type=int, default=31, help='random seed (default: 31)')
 parser.add_argument('--exp', type=str, default='', help='path to exp folder')
 parser.add_argument('--verbose', action='store_true', help='chatty')
+parser.add_argument('--instantiation', type=int, default=0, help='number of instantiation if initialized several times to account for network variability (default: 31)')
 
 
 def main():
@@ -86,8 +87,9 @@ def main():
     if not args.resume:
        torch.save({'epoch': 'randomstate',
                    'arch': args.arch,
+                   'seed': args.seed,
                    'state_dict': model.state_dict()},
-                   os.path.join(args.exp, 'checkpoint_dc2_randomstate.pth.tar'))
+                   os.path.join(args.exp,'checkpoint_dc'+str(args.instantiation)+'_randomstate.pth.tar'))
     
 
     # create optimizer
@@ -210,7 +212,7 @@ def main():
                     'arch': args.arch,
                     'state_dict': model.state_dict(),
                     'optimizer' : optimizer.state_dict()},
-                   os.path.join(args.exp, 'checkpoint_dc2_epoch'+str(epoch)+'.pth.tar'))
+                   os.path.join(args.exp, 'checkpoint_dc'+str(args.instantiation)+'_epoch'+str(epoch)+'.pth.tar'))
 
         # save cluster assignments
         cluster_log.log(deepcluster.images_lists)
