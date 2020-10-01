@@ -16,4 +16,4 @@ PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 mkdir -p ${EXP}
 
 ${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --conv 5 --lr 0.01 \
-  --wd -7 --tencrops --verbose --exp ${EXP} --workers 18 --epochs 10
+  --wd -7 --tencrops --verbose --exp ${EXP} --workers 18 --epochs 50

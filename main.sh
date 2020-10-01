@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#SBATCH --gres=gpu:4
-#SBATCH --cpus-per-task=24
+#SBATCH --gres=gpu:3
+#SBATCH --cpus-per-task=18
 #SBATCH -J train_dc_fromstartingcode
 #SBATCH --output=/home/annatruzzi/deepcluster/logs/slurm-%j.out
 #SBATCH --error=/home/annatruzzi/deepcluster/logs/slurm-%j.err
@@ -11,20 +11,19 @@ ARCH="alexnet"
 LR=0.05
 WD=-5
 K=10000
-K=10
-WORKERS=12
+WORKERS=18
 PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 CHECKPOINTS=5005
 #RESUME="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_2/checkpoint_dc2_epoch388.pth.tar"
 EPOCHS=50
+SEED=42
+i=2
+EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_$i"
+mkdir -p ${EXP}
 
-for i in 1
-do
-   EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_$i"
-   mkdir -p ${EXP}
-   ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
-   --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
-   --instantiation ${i} --checkpoints ${CHECKPOINTS} --resume ${RESUME}\
-   --epochs ${EPOCHS} --seed{$RANDOM}
-   echo "Started training for instantiation number $i"
-done
+${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
+ --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
+ --instantiation ${i} --checkpoints ${CHECKPOINTS}\
+ --epochs ${EPOCHS} --seed ${SEED}
+echo "Started training for instantiation number $i"
+
