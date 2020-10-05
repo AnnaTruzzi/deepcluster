@@ -1,0 +1,150 @@
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'
+Traceback (most recent call last):
+  File "eval_linear.py", line 319, in <module>
+    main()
+  File "eval_linear.py", line 59, in main
+    model.cuda()
+AttributeError: 'NoneType' object has no attribute 'cuda'

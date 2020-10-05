@@ -20,7 +20,7 @@ def main(pth):
         except:
             continue
     plt.plot(loss_list)
-    plt.savefig('LossPlot_dc1.png',bbox_inches='tight')
+    plt.savefig('LossPlot_dc2.png',bbox_inches='tight')
     plt.close()
 
 

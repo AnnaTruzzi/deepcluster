@@ -10,7 +10,7 @@ DATA="/data/ILSVRC2012"
 PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
 
 for (( i=0; i<50; i+=2 )); do
-    MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_2/checkpoint_dc1_epoch${i}.pth.tar"
+    MODEL="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_2/checkpoint_dc2_epoch${i}.pth.tar"
     EXP="/home/annatruzzi/deepcluster_eval/dc_2/checkpoint${i}"
     mkdir -p ${EXP}
     echo ${EXP}
