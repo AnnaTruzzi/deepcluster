@@ -20,11 +20,11 @@ def main(pth):
         except:
             continue
     plt.plot(loss_list)
-    plt.savefig('LossPlot_dc2.png',bbox_inches='tight')
+    plt.savefig('LossPlot_dc3.png',bbox_inches='tight')
     plt.close()
 
 
  
 if __name__ == '__main__':
-    pth = '/home/annatruzzi/deepcluster_eval/dc_2/'
+    pth = '/home/annatruzzi/deepcluster_eval/dc_3/'
     main(pth)
