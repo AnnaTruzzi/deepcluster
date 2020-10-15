@@ -304,31 +304,28 @@ def compute_features(dataloader, model, N):
     model.eval()
     # discard the label information in the dataloader
     for i, (input_tensor, _) in enumerate(dataloader):
-        if (i * args.batch)==N:
-            print('Skipping out for testing')
-            break
-
-        with torch.no_grad():   #RC
+        with torch.no_grad():
             input_var = torch.autograd.Variable(input_tensor.cuda())
             aux = model(input_var).data.cpu().numpy()
 
             if i == 0:
-                features = np.zeros((N, aux.shape[1])).astype('float32')
+                features = np.zeros((N, aux.shape[1]), dtype='float32')
 
+            aux = aux.astype('float32')
             if i < len(dataloader) - 1:
                 features[i * args.batch: (i + 1) * args.batch] = aux.astype('float32')
             else:
                 # special treatment for final batch
                 features[i * args.batch:] = aux.astype('float32')
 
-        # measure elapsed time
-        batch_time.update(time.time() - end)
-        end = time.time()
+            # measure elapsed time
+            batch_time.update(time.time() - end)
+            end = time.time()
 
-        if args.verbose and (i % 1) == 0: # RC: Every iteration
-            print('{0} / {1}\t'
-                  'Time: {batch_time.val:.3f} ({batch_time.avg:.3f})'
-                  .format(i, len(dataloader), batch_time=batch_time))
+            if args.verbose and (i % 200) == 0:
+                print('{0} / {1}\t'
+                    'Time: {batch_time.val:.3f} ({batch_time.avg:.3f})'
+                    .format(i, len(dataloader), batch_time=batch_time))
 
     return features
 
