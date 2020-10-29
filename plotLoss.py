@@ -8,12 +8,11 @@ import os
 
 def main(pth):
     loss_list = []
-    for directory in glob.glob(pth+'*'):
+    for num in range(0,27,2)
+        directory = pth+'checkpoint'+str(num)+'/log/loss_log'
         print(directory)
-        filename = os.path.join(directory,'log/loss_log')
-        print(filename)
         try:
-            with open (filename,'rb') as f:
+            with open (directory,'rb') as f:
                 data = pickle.load(f)
                 loss_list.append(data[-1])
                 print(len(data))
