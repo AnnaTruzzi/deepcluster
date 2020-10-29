@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --gres=gpu:2
-#SBATCH --cpus-per-task=12
+#SBATCH --gres=gpu:4
+#SBATCH --cpus-per-task=24
 #SBATCH -J checkLoss
 #SBATCH --output=/home/annatruzzi/deepcluster/logs/slurm-%j.out
 #SBATCH --error=/home/annatruzzi/deepcluster/logs/slurm-%j.err
@@ -15,5 +15,5 @@ for (( i=0; i<50; i+=2 )); do
     mkdir -p ${EXP}
     echo ${EXP}
     ${PYTHON} eval_linear.py --model ${MODEL} --data ${DATA} --epochs 20 --conv 5 --lr 0.01 \
-     --wd -7 --tencrops --verbose --exp ${EXP} --workers 12 
+     --wd -7 --tencrops --verbose --exp ${EXP} --workers 24
 done
