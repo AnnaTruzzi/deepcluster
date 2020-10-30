@@ -8,7 +8,7 @@ import os
 
 def main(pth):
     loss_list = []
-    for num in range(0,27,2):
+    for num in range(0,37,2):
         directory = pth+'checkpoint'+str(num)+'/log/loss_log'
         print(directory)
         try:
