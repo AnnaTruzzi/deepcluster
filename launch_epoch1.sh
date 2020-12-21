@@ -8,7 +8,7 @@
 #SBATCH --output=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.out
 #SBATCH --error=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.err
 
-i = $1
+INSTANTIATION = $1
 DIR="/ichec/work/tclif038b/ILSVRC2012/train"
 ARCH="alexnet"
 LR=0.05
@@ -25,6 +25,6 @@ SEED=$RANDOM
 
 ${PYTHON} main_parallelcomputing.py ${DIR} --exp ${EXP} --arch ${ARCH} --seed ${SEED} \
     --lr ${LR} --wd ${WD} --k ${K} --verbose \
-    --instantiation ${i} --checkpoints ${CHECKPOINTS}\
+    --instantiation ${INSTANTIATION} --checkpoints ${CHECKPOINTS}\
     --epochs ${EPOCHS} --sobel --workers ${WORKERS}
 
