@@ -1,29 +1,41 @@
 #!/bin/bash
 #
-#SBATCH --gres=gpu:2
-#SBATCH --cpus-per-task=12
-#SBATCH -J train_dc_nobuggedcodeincomputefeatures
-#SBATCH --output=/home/annatruzzi/deepcluster/logs/slurm-%j.out
-#SBATCH --error=/home/annatruzzi/deepcluster/logs/slurm-%j.err
+#SBATCH --time=48:00:00
+#SBATCH --nodes=4
+#SBATCH -A tclif038b
+#SBATCH -p GpuQ
+#SBATCH -J deepcluster_training
+#SBATCH --output=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.out
+#SBATCH --error=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.err
 
-DIR="/data/ILSVRC2012/train"
+DIR="/ichec/work/tclif038b/ILSVRC2012/train"
 ARCH="alexnet"
 LR=0.05
 WD=-5
 K=10000
-WORKERS=12
-PYTHON="/opt/anaconda3/envs/dc_p27/bin/python"
+WORKERS=4
+PYTHON="/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/bin/python"
 CHECKPOINTS=5005
-#RESUME="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_3/checkpoint_dc3_epoch8.pth.tar"
-EPOCHS=50
-#SEED=42
-i=3
-EXP="/home/annatruzzi/checkpoints/multiple_dc_instantiations/dc_$i"
-mkdir -p ${EXP}
+EPOCHS=500
 
-${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} \
- --lr ${LR} --wd ${WD} --k ${K} --verbose --workers ${WORKERS}\
- --instantiation ${i} --checkpoints ${CHECKPOINTS}\
- --epochs ${EPOCHS} --sobel
-echo "Started training for instantiation number $i"
 
+for i in {1..15}
+do
+   EXP="/ichec/work/tclif038b/deepcluster_checkpoints/dc_$i"
+   mkdir -p ${EXP}
+   if [[ $i -eq 1 ]];
+     then
+        RESUME="/ichec/work/tclif038b/deepcluster_checkpoints/dc_1/checkpoint_dc1_epoch3.pth.tar"
+	${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} --resume ${RESUME} \
+         --lr ${LR} --wd ${WD} --k ${K} --verbose \
+         --instantiation ${i} --checkpoints ${CHECKPOINTS}\
+         --epochs ${EPOCHS} --sobel --workers ${WORKERS}
+     else
+        SEED=$RANDOM
+        ${PYTHON} main.py ${DIR} --exp ${EXP} --arch ${ARCH} --seed ${SEED} \
+         --lr ${LR} --wd ${WD} --k ${K} --verbose \
+         --instantiation ${i} --checkpoints ${CHECKPOINTS}\
+         --epochs ${EPOCHS} --sobel --workers ${WORKERS}
+        echo "Started training for instantiation number $i"
+   fi
+done

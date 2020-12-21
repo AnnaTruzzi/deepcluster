@@ -1,0 +1,51 @@
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 170, in run_kmeans
+    res = faiss.StandardGpuResources()
+AttributeError: 'module' object has no attribute 'StandardGpuResources'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 170, in run_kmeans
+    res = faiss.StandardGpuResources()
+AttributeError: 'module' object has no attribute 'StandardGpuResources'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 170, in run_kmeans
+    res = faiss.StandardGpuResources()
+AttributeError: 'module' object has no attribute 'StandardGpuResources'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 170, in run_kmeans
+    res = faiss.StandardGpuResources()
+AttributeError: 'module' object has no attribute 'StandardGpuResources'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+slurmstepd: error: *** JOB 655502 ON n362 CANCELLED AT 2020-12-02T10:24:10 ***

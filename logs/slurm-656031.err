@@ -1,0 +1,97 @@
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 179, in run_kmeans
+    losses = faiss.vector_to_array(clus.obj)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 1450, in <lambda>
+    __getattr__ = lambda self, name: _swig_getattr(self, Clustering, name)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 80, in _swig_getattr
+    raise AttributeError("'%s' object has no attribute '%s'" % (class_type.__name__, name))
+AttributeError: 'Clustering' object has no attribute 'obj'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 179, in run_kmeans
+    losses = faiss.vector_to_array(clus.obj)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 1450, in <lambda>
+    __getattr__ = lambda self, name: _swig_getattr(self, Clustering, name)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 80, in _swig_getattr
+    raise AttributeError("'%s' object has no attribute '%s'" % (class_type.__name__, name))
+AttributeError: 'Clustering' object has no attribute 'obj'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 179, in run_kmeans
+    losses = faiss.vector_to_array(clus.obj)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 1450, in <lambda>
+    __getattr__ = lambda self, name: _swig_getattr(self, Clustering, name)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 80, in _swig_getattr
+    raise AttributeError("'%s' object has no attribute '%s'" % (class_type.__name__, name))
+AttributeError: 'Clustering' object has no attribute 'obj'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 179, in run_kmeans
+    losses = faiss.vector_to_array(clus.obj)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 1450, in <lambda>
+    __getattr__ = lambda self, name: _swig_getattr(self, Clustering, name)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 80, in _swig_getattr
+    raise AttributeError("'%s' object has no attribute '%s'" % (class_type.__name__, name))
+AttributeError: 'Clustering' object has no attribute 'obj'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 179, in run_kmeans
+    losses = faiss.vector_to_array(clus.obj)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 1450, in <lambda>
+    __getattr__ = lambda self, name: _swig_getattr(self, Clustering, name)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 80, in _swig_getattr
+    raise AttributeError("'%s' object has no attribute '%s'" % (class_type.__name__, name))
+AttributeError: 'Clustering' object has no attribute 'obj'
+/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/PIL/TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 4 bytes but only got 0. 
+  warnings.warn(str(msg))
+Traceback (most recent call last):
+  File "main.py", line 335, in <module>
+    main()
+  File "main.py", line 163, in main
+    clustering_loss = deepcluster.cluster(features, verbose=args.verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 211, in cluster
+    I, loss = run_kmeans(xb, self.k, verbose)
+  File "/ichec/home/users/annatruzzi/deepcluster/clustering.py", line 179, in run_kmeans
+    losses = faiss.vector_to_array(clus.obj)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 1450, in <lambda>
+    __getattr__ = lambda self, name: _swig_getattr(self, Clustering, name)
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss_avx2.py", line 80, in _swig_getattr
+    raise AttributeError("'%s' object has no attribute '%s'" % (class_type.__name__, name))
+AttributeError: 'Clustering' object has no attribute 'obj'
+slurmstepd: error: *** JOB 656031 ON n364 CANCELLED AT 2020-12-03T09:27:42 ***

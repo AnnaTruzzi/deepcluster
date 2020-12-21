@@ -1,0 +1,180 @@
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
+Traceback (most recent call last):
+  File "main.py", line 12, in <module>
+    import faiss
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/__init__.py", line 49, in <module>
+    from .swigfaiss import *
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 17, in <module>
+    _swigfaiss = swig_import_helper()
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/site-packages/faiss/swigfaiss.py", line 16, in swig_import_helper
+    return importlib.import_module('_swigfaiss')
+  File "/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _swigfaiss
