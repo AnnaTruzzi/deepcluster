@@ -1,0 +1,60 @@
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?
+  File "launch_dependencies.py", line 14
+    print "Job1 is %s" % jobnum
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Job1 is %s" % jobnum)?

@@ -10,7 +10,6 @@
 
 for i in {1..15}
 do
-    launch_dependencies.py -i ${i}
-    echo "Started training for instantiation number $i"
-   fi
+  python launch_dependencies.py -i ${i}
+  echo "Started training for instantiation number $i"
 done
