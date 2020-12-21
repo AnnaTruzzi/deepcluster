@@ -1,0 +1,13 @@
+/var/spool/slurmd/job664254/slurm_script: line 11: i: command not found
+usage: main_parallelcomputing.py [-h] [--arch ARCH] [--sobel]
+                                 [--clustering {Kmeans,PIC}]
+                                 [--nmb_cluster NMB_CLUSTER] [--lr LR]
+                                 [--wd WD] [--reassign REASSIGN]
+                                 [--workers WORKERS] [--epochs EPOCHS]
+                                 [--start_epoch START_EPOCH] [--batch BATCH]
+                                 [--momentum MOMENTUM] [--resume PATH]
+                                 [--checkpoints CHECKPOINTS] [--seed SEED]
+                                 [--exp EXP] [--verbose]
+                                 [--instantiation INSTANTIATION]
+                                 DIR
+main_parallelcomputing.py: error: argument --instantiation: expected one argument
