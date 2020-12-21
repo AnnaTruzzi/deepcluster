@@ -1,4 +1,5 @@
-import commands, os
+import commands
+import os
 import argparse
 
 parser = argparse.ArgumentParser()
