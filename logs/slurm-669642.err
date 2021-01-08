@@ -1,0 +1,3 @@
+/var/spool/slurmd/job669642/slurm_script: line 13: i: command not found
+usage: launch_dependencies_resumeonly.py [-h] [--instantiation INSTANTIATION]
+launch_dependencies_resumeonly.py: error: argument --instantiation/-i: expected one argument
