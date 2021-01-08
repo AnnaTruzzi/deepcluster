@@ -8,8 +8,6 @@
 #SBATCH --output=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.out
 #SBATCH --error=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.err
 
-INSTANTIATION = $1
-epoch = $2
 DIR="/ichec/work/tclif038b/ILSVRC2012/train"
 ARCH="alexnet"
 LR=0.05
@@ -18,10 +16,11 @@ K=10000
 WORKERS=4
 PYTHON="/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/bin/python"
 CHECKPOINTS=5005
-EXP="/ichec/work/tclif038b/deepcluster_checkpoints/dc_${i}"
-RESUME="/ichec/work/tclif038b/deepcluster_checkpoints/dc_${i}/checkpoint_dc${i}_epoch${epoch}.pth.tar"
+EXP="/ichec/work/tclif038b/deepcluster_checkpoints/dc_${INSTANTIATION}"
+RESUME="/ichec/work/tclif038b/deepcluster_checkpoints/dc_${INSTANTIATION}/checkpoint_dc${INSTANTIATION}_epoch${EPOCH_RES}.pth.tar"
+EPOCHS=500
 
 ${PYTHON} main_parallelcomputing.py ${DIR} --exp ${EXP} --arch ${ARCH} --resume ${RESUME} \
     --lr ${LR} --wd ${WD} --k ${K} --verbose \
     --instantiation ${INSTANTIATION} --checkpoints ${CHECKPOINTS}\
-    --start_epoch ${epoch} --sobel --workers ${WORKERS}
+    --sobel --workers ${WORKERS} --epochs ${EPOCHS}

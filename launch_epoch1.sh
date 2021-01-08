@@ -8,7 +8,6 @@
 #SBATCH --output=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.out
 #SBATCH --error=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.err
 
-INSTANTIATION = $1
 DIR="/ichec/work/tclif038b/ILSVRC2012/train"
 ARCH="alexnet"
 LR=0.05
@@ -18,7 +17,7 @@ WORKERS=4
 PYTHON="/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/bin/python"
 CHECKPOINTS=5005
 EPOCHS=500
-EXP="/ichec/work/tclif038b/deepcluster_checkpoints/dc_${i}"
+EXP="/ichec/work/tclif038b/deepcluster_checkpoints/dc_${INSTANTIATION}"
 mkdir -p ${EXP}
 SEED=$RANDOM
 
