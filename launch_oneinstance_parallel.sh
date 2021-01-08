@@ -9,7 +9,9 @@
 #SBATCH --error=/ichec/home/users/annatruzzi/deepcluster/logs/slurm-%j.err
 
 PYTHON="/ichec/home/users/annatruzzi/anaconda3/envs/dc_p27/bin/python"
-INSTANTIATION = 1
 
-${PYTHON} launch_dependencies_resumeonly.py -i ${INSTANTIATION}
-echo "Started training for instantiation number $i"
+for i in {1..2}
+do
+  ${PYTHON} launch_dependencies_resumeonly.py -i ${i}
+  echo "Started training for instantiation number $i"
+done

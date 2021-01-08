@@ -18,7 +18,7 @@ else:
     print("Error submitting Job1 %s" % jobnum)
 
 for epoch in range(2,500):
-    cmd = "sbatch --depend=afterok:%s --export=INSTANTIATION=$%s,EPOCH_RES=$%s launch_resume.sh " % (jobnum, args.instantiation, epoch)
+    cmd = "sbatch --dependency==afterok:%s --export=INSTANTIATION=$%s,EPOCH_RES=$%s launch_resume.sh " % (jobnum, args.instantiation, epoch)
     status,jobnum = commands.getstatusoutput(cmd)
     if (status == 0 ):
         print("Running job is %s" % jobnum)
